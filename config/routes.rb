@@ -58,8 +58,8 @@ Phoneclone::Application.routes.draw do
   
  
   
-  devise_for :admins, :controllers => { :registrations => "admins/registrations" } 
-  devise_for :users 
+  devise_for :admins
+  devise_for :user, :controllers => { :sessions => "sessions" } 
 
 
 
