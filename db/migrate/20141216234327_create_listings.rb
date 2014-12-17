@@ -20,6 +20,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :devicecarrier
       t.string :deviceimei
       t.string :devicecolor
+      t.string :devicecondition
       t.string :shippingdetails
       t.string :status
       t.integer :phone_id
