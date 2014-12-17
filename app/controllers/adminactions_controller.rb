@@ -29,8 +29,8 @@ class AdminactionsController < ApplicationController
    end
   
   def dashboard
-    @listings = Listing.find_all_by_status("Pending")
-    @comments = Comment.find_all_by_status("Pending")
+    @listings = Listing.where('status iLIKE ?',"Pending")
+    @comments = Comment.where('status iLIKE ?',"Pending")
     
   end
   
