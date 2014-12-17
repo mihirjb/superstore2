@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id                   :integer          not null, primary key
+#  subject              :string(255)
+#  commentbody          :text
+#  user_id              :integer
+#  listing_id           :integer
+#  status               :string(255)
+#  picture_file_name    :string(255)
+#  picture_content_type :string(255)
+#  picture_file_size    :integer
+#  picture_updated_at   :datetime
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
 class Comment < ActiveRecord::Base
   
   belongs_to :listing, touch: true
