@@ -20,7 +20,6 @@ class ListingsController < ApplicationController
     
     @listing = current_user.listings.create(listing_params())
     if @listing.save
-      Listing.get_paypal_status(@listing.paypalemail,@listing.paypalfname,@listing.paypallname,@listing.id)
       redirect_to "/pages/thanksandshare?lid=#{@listing.id}", :notice => "Congratulations, Listing created Successfully."
     else
      redirect_to :back, :notice => "Alas your listing could not be saved as there were errors."
@@ -73,7 +72,7 @@ class ListingsController < ApplicationController
   
     private 
     def listing_params
-     params.require(:listing).permit(:deliveryby,:pickupaddress,:paypalstatus,:status, :terms, :phone_id, :headline, :description, :devicecondition, :askprice,:expirydate, :modified, :accessories, :country, :itemlocation, :shipinternationally, :paypalconfirmed, :returnsallowed, :returnpolicy, :paypalemail,:paypalfname,:paypallname,:devicename, :deviceimei, :devicecarrier, :moddetails, :devicecolor,:devicestorage,:shippingdetails, assets_attributes:[:listing_id,:image_file_name, :image_file_size, :image_content_type, :image], comments_attributes: [:listing_id, :commentbody,:user_id])
+     params.require(:listing).permit(:deliveryby,:pickupaddress,:paypalstatus,:status, :terms, :phone_id, :headline, :description, :devicecondition, :askprice,:expirydate, :modified, :accessories, :country, :itemlocation, :shipinternationally, :paypalconfirmed, :returnsallowed, :returnpolicy, :paypalemail,:paypalfname,:paypallname,:devicename, :deviceimei, :devicecarrier, :moddetails, :devicecolor,:devicestorage,:shippingdetails, assets_attributes:[:image_file_name, :image_file_size, :image_content_type, :image], comments_attributes: [:commentbody,:user_id])
     end
  
 end
