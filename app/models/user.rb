@@ -30,7 +30,5 @@ class User < ActiveRecord::Base
           has_many :listings, :dependent =>:destroy
           has_one :profile, dependent: :destroy, autosave: true
           accepts_nested_attributes_for :profile
-          
-          validates :firstname, presence: true
-          
+                    
 end
