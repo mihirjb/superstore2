@@ -8,7 +8,6 @@ Phoneclone::Application.routes.draw do
   get "adminactions/approvelisting"
   get "adminactions/dashboard"
   
-  devise_for :admins 
   get "transactions/initiatetransaction"
   post "transactions/processtransaction"
   get "transactions/completetransaction"
@@ -59,7 +58,8 @@ Phoneclone::Application.routes.draw do
   
  
   
-  devise_for :users, :controllers => { :sessions => "sessions" } 
+  devise_for :admins, :controllers => { :registrations => "admins/registrations" } 
+  devise_for :users 
 
 
 
