@@ -7,6 +7,9 @@
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
 
+	<p>
+		<%= f.text_field :firstname, :class=> " required", :placeholder=>"Your Name" %>
+	</p>
 <p>
 	<%= f.text_field :email, :class=> " required", :placeholder=>"Email" %>
 </p>
