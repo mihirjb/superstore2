@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217073530) do
+ActiveRecord::Schema.define(version: 20141217094443) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(version: 20141217073530) do
     t.string   "aboutme"
     t.string   "twitterhandle"
     t.string   "websiteurl"
-    t.string   "user_id"
     t.string   "address"
     t.string   "phone"
     t.datetime "created_at"
@@ -166,6 +165,7 @@ ActiveRecord::Schema.define(version: 20141217073530) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "reviews", force: true do |t|
