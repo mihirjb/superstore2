@@ -176,10 +176,10 @@
 				<p class="helper-block alert alert-danger">If you upload pictures now, then you'll not be allowed to add more pictures later. But if you don't then you can add pictures by editing the listing. So we say upload them later by editing the same listing.</p>
 										<div class="newPaperclipFiles">
 
-										        <%= f.fields_for :assets do |asset| %>
+											<%= f.fields_for :assets do |asset_fields| %> 
 
 										           <% if asset.object.new_record? %>
-										                 <%= asset.file_field :image, :class=> "" %>
+												<%= asset_fields.file_field :asset %>
 										           <% end %>
 
 										       <% end %>
