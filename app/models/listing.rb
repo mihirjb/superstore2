@@ -63,7 +63,7 @@ class Listing < ActiveRecord::Base
   
   
   belongs_to :phone, touch: true
-  has_one :user
+  belongs_to :user
   has_many :comments, :dependent => :destroy
   has_many :assets, :dependent => :destroy
   
