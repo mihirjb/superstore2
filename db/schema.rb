@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217073112) do
+ActiveRecord::Schema.define(version: 20141217073530) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20141217073112) do
     t.string   "devicecondition"
     t.string   "deliveryby"
     t.string   "pickupaddress"
+    t.string   "returnpolicy"
   end
 
   create_table "orders", force: true do |t|
