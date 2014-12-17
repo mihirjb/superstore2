@@ -40,7 +40,7 @@ gem 'fancybox-rails'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'paypal-sdk-adaptiveaccounts'
-
+gem 'rails_12factor'
 
 
 gem 'jbuilder', '~> 1.2'
