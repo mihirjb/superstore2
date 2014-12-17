@@ -1,0 +1,65 @@
+<% content_for :title,  "Edit your listing to sell in Singapore" %>
+
+<div class="outer">
+					<div class="main">
+						<div class="centered-800 section rounded offshadow">
+							<% if @listing.errors.full_messages.any? %>
+							<div id="error_explanation">
+							<h2>Please rectify the following errors</h2>
+							<ul>
+							<% @listing.errors.full_messages.each do |error_message| %>
+							<li><%= error_message %></li>
+							<% end %>
+							</div>
+							<% end %>
+		<%= form_for @listing, :class=>"form-horizontal", :role => "form", :html => { :multipart => true } do |f| %>
+		<h4 class="form-title">All the inputs with the <span class="green">asterisk (*)</span> sign are compulsory to fill.</h4>
+		
+		
+			<%= f.text_field :headline, :class=> "form-control required", :placeholder=>"Give a heading to your listing*" %>
+
+		
+			<h3>Listing pricing and other details</h3>
+			<%= f.text_field :askprice, :class=> "form-control required", :placeholder=>"Your selling price*" %>
+			<span class="helper-block">Price in USD</span>
+			<%= f.text_field :paypalemail, :class=> "form-control required", :placeholder=>"Your Paypal email address*" %>
+			<span class="helper-block">Paypal email will be kept private</span><br/> <br/>
+				<%= f.text_field :paypalfname, :class=> " required", :placeholder=>"Your First name in Paypal, required for verification*" %>
+				<%= f.text_field :paypallname, :class=> " required", :placeholder=>"Your Last name in Paypal, required for verification*" %>
+			
+		
+		
+			
+
+				<div class="existingPaperclipFiles">
+
+					<% if @listing.assets.exists? %>
+					<h3>Existing images.</h3>
+
+						<%  @listing.assets.take(5).each do |a| %>
+						<%= image_tag a.image.url('thumb') %>
+						<% end %>
+
+						<% else %>
+						<h3>Upload you verification images.</h3>
+						<%= f.fields_for :assets do |asset| %>
+						 <%= asset.file_field :image, :class=> "form-control" %>
+			            <% end %>
+
+						<% end %>
+
+
+
+
+
+
+				</div>
+<br/>
+<br/>
+	
+			
+		<%= f.submit "Update", :disable_with => 'Updating...', :class =>"btn redround" %>
+		<% end %>
+	</div>	
+	</div>
+</div>

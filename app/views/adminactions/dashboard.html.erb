@@ -1,0 +1,97 @@
+		<div class="outer">
+<div class="main">
+								<div class="centered-800 section rounded row">
+			<div class="table-responsive cushion" id="listings">
+				<h2> Unapproved Listings</h2>
+			
+			<table class="table table-condensed">
+				<tr class="active">
+					<th>Image</th>
+					<th>Title</th>
+					<th>Price</th>
+					<th>Status</th>
+					<th>Number of Images</th>
+					<th>Approve</th>
+					<th>Delete</th>
+					<th>Request Modification</th>
+					
+				</tr>
+				<% @listings.each do |dlisting| 
+					
+					if dlisting.status == "Pending"
+					
+					%>
+
+				<tr  class='<%=
+				@class = ""
+					if dlisting.status == "Approved"
+					@class = "active"
+				end
+				if
+					dlisting.status == "Pending"
+					@class = "danger"
+				end
+				if dlisting.status == "Sold"
+					@class = "success"
+				end
+
+				 @class %>'><td><%= image_tag dlisting.assets.first.image.url('thumb') unless dlisting.assets.first.nil? %></td>
+
+				<td>
+					<a href ="/listings/<%=dlisting.id%>">
+				<%= dlisting.headline %>
+				</a>
+
+				</td>
+				<td>
+
+
+			<%= dlisting.askprice.to_i + 20 %></td>
+					<td>
+						<%= dlisting.status %>
+						</td>
+
+					
+						<td><%=dlisting.assets.count %></td>
+						<td><a class="btn btn-success" href="/adminactions/approvelisting?id=<%=dlisting.id%>">Approve</a></td>
+						<td><a class="btn btn-danger" href="/adminactions/deletelisting?id=<%=dlisting.id%>">Delete</a></td>
+						<td><a class="btn btn-info" href="/adminactions/modifylisting?id=<%=dlisting.id%>">Modify request</a></td>
+					
+					</tr>
+				<% end %>
+				<% end %>
+				
+				</table>			
+		</div>
+		
+			
+			<div class="cushion">
+				<h2> Unapproved Comments</h2>
+			<table class= "table">
+				<tr><th>Comment id</th><th>Comment</th><th>Listing Id</th></tr>
+				<% @comments.each do |l|%>
+
+
+					<tr><td><a href="/comments/<%=l.id %>"><%=l.id%></a></td>
+				<td><%=l.commentbody %>
+					<% if l.picture.exists?%>
+					
+					<br/>
+					<a class="fancybox" href="<%= l.picture.url('original')%>" rel="group"><%= image_tag l.picture.url('mini')  unless l.picture.nil?%></a>
+					
+					<% end %>
+					
+					</td>
+				<td><%= l.listing_id %></td>
+				
+					
+					<td><a class="btn btn-success" href="/adminactions/approvecomment?id=<%=l.id%>">Approve</a></td>
+					<td><a class="btn btn-danger" href="/adminactions/deletecomment?id=<%=l.id%>">Delete</a></td>
+					
+					</tr>
+				<%end%>
+				</table>
+				</div>
+		</div>
+			</div>
+			</div>

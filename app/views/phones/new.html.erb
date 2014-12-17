@@ -1,0 +1,25 @@
+<% content_for :title,  "Add a new phone to the database" %>
+	
+	<div class="outer">
+<div class="main">
+							<div class="centered-800 section rounded offshadow">
+		
+		<%= form_for @phone, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
+		
+		
+				<h3>Phone data</h3><br/><br/>
+				<hr class="gray">
+				<%= f.label :image, "Upload your Phone's picture" %><%= f.file_field :image, :class => "btn btn-success" %><br/>
+			  
+			<%= f.text_field :modelname, :class=> "form-control", :placeholder=>"Phone's model name" %>
+
+				<%= f.text_field :phonetype, :class=> "form-control", :placeholder=>"Type of phone" %>
+			
+			<hr class="gray">
+
+		<%= f.submit "Add", :disable_with => 'Going...', :class =>"btn redround" %>
+		<% end %>
+		
+	</div>
+</div>
+</div>

@@ -1,0 +1,46 @@
+
+
+<div class="outer">
+<div class="main">
+						<div class="centered-800 section rounded">
+		<%= form_for @profile, :class=>"form-horizontal",  :role => "form" do |f| %>
+		
+			
+				<h3>Helpful details about you.</h3>
+				<%= image_tag @profile.avatar.url(:medium) %><br/>
+				<%= f.label :avatar, "Upload your Profile picture" %><%= f.file_field :avatar, :class=> "btn btn-file btn-sm" %><br/>
+				
+				
+			<%= f.text_field :fullname,  :placeholder=>"Your full name" %>
+
+			<%= f.text_field :paypalemail,  :placeholder=>"Your Paypal email address" %>
+			<span class="helper-block">Will be kept private</span>
+			
+			<hr class="gray">
+			
+	
+			
+			
+			<h3>More info about you, visible to public</h3>
+			<%= f.text_field :displayname,  :placeholder=>"Display Name" %>			
+			<%= f.text_area :aboutme,  :placeholder=>"About yourself" %>
+			<%= f.text_field :twitterhandle,  :placeholder=>"Twitter username" %>
+			<%= f.text_field :websiteurl,  :placeholder=>"Your website address" %>
+			<hr class="gray">
+			
+			
+		
+			<h3>Shipping Details</h3>
+			<%= f.text_field :country,  :placeholder=>"Country you live in" %>
+			<%= f.text_field :timezone,  :placeholder=>"Your timezone" %>
+			<%= f.text_field :location,  :placeholder=>"Your city or location" %>
+			<%= f.text_area :address,  :placeholder=>"Shipping address in full. e.g. Street Address, City, Country - Pincode." %>
+			<%= f.text_field :phone,  :placeholder=>"Your phone number" %>
+			
+			<hr class="gray">
+	
+		<%= f.submit "Update", :disable_with => 'Updating...', :class =>"btn redround" %>
+		<% end %>
+	</div>	
+	</div>
+</div>
