@@ -5,7 +5,7 @@
 							<div class="centered-800 section rounded row">								
 								<div class="col-md-12 col-sm-12 col-xs-12 section-heading">
 									
-									<% @profil = Profile.find_by_user_id(current_user.id)  %>
+									<% @profil = Profile.where('user_id = ?',current_user.id)  %>
 
 
 									<%=image_tag @profil.avatar.url(:mini), :class => "main-avatar small-img" %>
@@ -27,7 +27,7 @@
 						
 			
 			<div class="table-responsive" id="listings">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all your listings.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your listings.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -80,7 +80,7 @@
 		
 		
 		<div class="table-responsive" id="activelistings">
-		<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all your  active listings.</h3>
+		<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname %></span>, here are all your  active listings.</h3>
 		<hr class="gray">
 		<table class="table table-condensed">
 			<tr class="active">
@@ -120,7 +120,7 @@
 		
 		
 			<div class="table-responsive" id="pendinglistings">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all your  pending listings.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your  pending listings.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -162,7 +162,7 @@
 		
 		
 			<div class="table-responsive" id="soldlistings">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all your sold listings.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your sold listings.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -202,7 +202,7 @@
 		
 		
 			<div class="table-responsive" id="orders">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all your orders.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your orders.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -215,7 +215,7 @@
 				
 				<tr>
 					<td>
-				<%= o.devicename %> Sold to <%= Account.find(current_user.id).subdomain %> at $<%= o.ordertotal %>
+				<%= o.devicename %> Sold to <%= current_user.firstname %> at $<%= o.ordertotal %>
 				
 				</td>
 				<td>
@@ -246,7 +246,7 @@
 		</div>		
 		
 			<div class="table-responsive" id="soldorders">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all phones you sold.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all phones you sold.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -259,7 +259,7 @@
 			<%	if current_user.id == o.seller_id %>
 				<tr>
 					<td>
-				<%= o.devicename %> Sold to <%= Account.find(current_user.id).subdomain %> at $<%= o.ordertotal %>
+				<%= o.devicename %> Sold to <%= current_user.firstname %> at $<%= o.ordertotal %>
 				
 				</td>
 				<td>
@@ -291,7 +291,7 @@
 		</div>
 		
 			<div class="table-responsive" id="boughtorders">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here are all phones you bought.</h3>
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all phones you bought.</h3>
 			<hr class="gray">
 			<table class="table table-condensed">
 				<tr class="active">
@@ -304,7 +304,7 @@
 			<%	if current_user.id == o.user_id %>
 				<tr>
 					<td>
-				<%= o.devicename %> Sold to <%= Account.find(current_user.id).subdomain %> at $<%= o.ordertotal %>
+				<%= o.devicename %> Sold to <%= current_user.firstname %> at $<%= o.ordertotal %>
 				
 				</td>
 				<td>
@@ -336,7 +336,7 @@
 		</div>
 		
 			<div class="table-responsive" id="sellerreview">
-			<h3 class="listing-heading">Hey <span class="propernoun"><%=  Account.find(current_user.id).subdomain  %></span>, here is all the feedback you got.
+			<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here is all the feedback you got.
 				<span class="pull-right">
 				<span class="upvote"><%= Vote.where('voteable_id =? AND vote =?', @profile.id, true).count %></span> <span class="glyphicon glyphicon-thumbs-up"></span>
 				<span class="downvote"><%= Vote.where('voteable_id =? AND vote =?', @profile.id, false).count %> </span><span class="glyphicon glyphicon-thumbs-down gray"></span>
@@ -352,7 +352,7 @@
 				<% @feedbacks.each do |dfeedback| %>
 			<tr>
 				<% cache dfeedback do %>
-				<td><%= image_tag Profile.find_by_user_id(dfeedback.author_id).avatar.url('mini')  %></td>
+				<td><%= image_tag Profile.where('user_id = ?',dfeedback.author_id).avatar.url('mini')  %></td>
 				<td><%= dfeedback.reviewbody %></td>
 				<% end %>
 				</tr>
@@ -369,11 +369,11 @@
 				<% if current_user.id == o.user_id  %>
 
 				<li>
-		<h4><%= o.devicename %> bought from <%= Account.find(current_user.id).subdomain %> at $<%= o.ordertotal %></h4>
+		<h4><%= o.devicename %> bought from <%= current_user.firstname %> at $<%= o.ordertotal %></h4>
 			<p><%=o.shipping_address%></p>
 				<a href="/listings/<%o.listing_id%>" class="btn btn-warning btn-sm">View Listing</a>
 			<%
-	@profile = Profile.find_by_user_id(o.seller_id)		
+	@profile = Profile.where('user_id = ?',o.seller_id)		
 			 if Trackcode.find_by_order_id(o.id) %>
 				<a href="/trackcodes/<%= o.id%>" class="btn btn-success btn-sm">See tracking info</a>
 		<% else %>
@@ -427,7 +427,7 @@
 						<%= f.text_area :reviewbody, :class=> "form-control", :placeholder=>"Write a review" %>
 					</div> 
 					<%= f.hidden_field :order_id, :value => o.id %>
-						<%= f.hidden_field :profile_id, :value => Profile.find_by_user_id(o.seller_id).id %>
+						<%= f.hidden_field :profile_id, :value => Profile.where('user_id = ?',o.seller_id).id %>
 						<%= f.hidden_field :author_id, :value => o.user_id %>
 						<input type="text" name="foo" style="display: none;">
 

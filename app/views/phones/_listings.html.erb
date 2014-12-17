@@ -4,7 +4,7 @@
 			<% @listings.each do |l| %>
 				<div class="row">
 					<div class="media col-md-2 col-sm-2 col-xs-12">
-						<%=image_tag Profile.find_by_user_id(l.user_id).avatar.url(:mini), :class => "main-avatar small-img" %>
+						<%=image_tag Profile.where('user_id = ?',l.user_id).first.avatar.url(:mini), :class => "main-avatar small-img" %>
 						</div>
 				<div class="headline col-md-7 col-sm-7 col-xs-12">
 					
