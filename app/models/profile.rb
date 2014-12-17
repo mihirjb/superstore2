@@ -26,6 +26,8 @@
 
 class Profile < ActiveRecord::Base
   validates_presence_of :country
+
+
    acts_as_voteable
 
 

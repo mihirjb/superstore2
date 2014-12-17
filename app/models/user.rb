@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
           acts_as_voter    
 
           has_many :listings, :dependent =>:destroy
-          has_one :profile, dependent: :destroy
+          has_one :profile, dependent: :destroy, autosave: true
           accepts_nested_attributes_for :profile
           
           validates :firstname, presence: true
