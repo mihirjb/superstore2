@@ -28,7 +28,7 @@ class PhonesController < ApplicationController
   
   def show
     
-    @phone = Phone.find(params[:id])
+    @phone = Phone.where(params[:id])
     if params['sort']
       if params['sort'] == "l2h"
       @listings = Listing.where("phone_id = ? AND status iLIKE ?",@phone.id, "Approved").order("askprice ASC").paginate :page => params[:page],:per_page=>30
