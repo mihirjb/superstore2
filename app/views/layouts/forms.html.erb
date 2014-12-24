@@ -12,9 +12,8 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="forms">
 	<% if vendor_signed_in? %>
-	<header class="offshadow">
 		<nav class="navbar navbar-default offshadow" role="navigation">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,11 +30,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		   
-		      	<form class="navbar-form navbar-left form-inline" role="search" action ="/pages/searchresults">
-				  <div class="form-group">
-					<input type="text" name="search" placeholder ="Search for iPhone, iPad etc" class="typeahead">		      			</div>
-				  <button type="submit" class="btn green-sea-flat-button">Go</button>
-				</form>
+		     
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="<%= root_url %>">Home</a></li>
 				
@@ -57,10 +52,8 @@
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
-
-	
-		</header>
 	<%end%>
+	
 <%= yield %>
 
 <div id="footer" class="offshadow">
@@ -80,5 +73,7 @@
 	
 	<div id="credits" class="centered-text softshadow"><p>All rights reserved.</p></div>
 </div>
+
+
 </body>
 </html>

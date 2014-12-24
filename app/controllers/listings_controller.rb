@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:show]
   impressionist :actions=>[:show]
-  
+  layout "forms", :only => [:new, :edit]
   
   def index
     @listings = current_user.listings.all

@@ -6,11 +6,7 @@ class PagesController < ApplicationController
  
   
   def home
-         @newlistedphones = Phone.all.order("updated_at DESC").limit(6)
-         @mostviewedphones = Phone.all.order("impressions_count DESC").limit(6)
-         @iphones = Phone.where('phonetype iLIKE ?', "iPhone")
-         @ipads = Phone.where('phonetype iLIKE ?', "iPad")
-         
+       
   end
   
   
