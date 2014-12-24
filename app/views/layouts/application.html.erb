@@ -43,12 +43,12 @@
 					<li class="divider"></li>
 					
 					<li>
-							<% if vendor_signed_in? %>
+							<% if user_signed_in? %>
 						<%= link_to "My Dashboard", dashboard_url %></li>
 						
-						<li><%= link_to "Sign out", destroy_vendor_session_path, :method => 'delete' %>
+						<li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
 						<% else %>
-					     	<li> <%= link_to "Sign in", new_vendor_session_path %></li>
+					     	<li> <%= link_to "Sign in", new_user_session_path %></li>
 					     	<li> <%= link_to "Sign up", new_account_path %>
 
 						<% end %>

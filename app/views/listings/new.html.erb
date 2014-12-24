@@ -131,7 +131,7 @@
 		<hr class="gray">
 			<p><%=f.label:deviceimei, "Phone's IMEI number" %>	<%= f.text_field :deviceimei, :class=> "required", :placeholder=>"IMEI needed for verification. Will be kept private" %></p>
 			
-				<p><%=f.label:paypalemail, "Your paypal email" %>	<%= f.text_field :paypalemail, :class=> "required", :value=>"#{current_vendor.email}" %></p>
+				<p><%=f.label:paypalemail, "Your paypal email" %>	<%= f.text_field :paypalemail, :class=> "required", :value=>"#{current_user.email}" %></p>
 			
 					<p><%=f.label:paypalfname, "First name in paypal" %>	<%= f.text_field :paypalfname, :class=> "required", :placeholder=>"Paypal first name is needed for verification" %></p>
 		

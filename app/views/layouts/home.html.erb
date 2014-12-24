@@ -13,7 +13,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% if vendor_signed_in? %>
+	<% if user_signed_in? %>
 	<header class="offshadow">
 		<nav class="navbar navbar-default offshadow" role="navigation">
 		  <div class="container-fluid">
@@ -48,7 +48,7 @@
 				<li>
 					<%= link_to "My Dashboard", dashboard_url %></li>
 					
-					<li><%= link_to "Sign out", destroy_vendor_session_path, :method => 'delete' %>
+					<li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
 				
 				</li>
 		          </ul>
