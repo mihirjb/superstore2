@@ -65,7 +65,7 @@
 						<% @feedbacks.each do |feedback| %>
 					<li>
 						<% cache feedback do %>
-						<%= image_tag Profile.find_by_user_id(feedback.author_id).avatar.url('thumb')  %>
+						<%= image_tag Profile.where('user_id = ?',l.feedback.author_id).first.avatar.url('thumb')  %>
 						<h4><%= feedback.reviewbody %><h4>
 						<% end %>
 							
