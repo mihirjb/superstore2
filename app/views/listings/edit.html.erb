@@ -1,65 +1,164 @@
 <% content_for :title,  "Edit your listing to sell in Singapore" %>
 
-<div class="outer">
-					<div class="main">
-						<div class="centered-800 section rounded offshadow">
-							<% if @listing.errors.full_messages.any? %>
-							<div id="error_explanation">
-							<h2>Please rectify the following errors</h2>
-							<ul>
-							<% @listing.errors.full_messages.each do |error_message| %>
-							<li><%= error_message %></li>
-							<% end %>
-							</div>
-							<% end %>
-		<%= form_for @listing, :class=>"form-horizontal", :role => "form", :html => { :multipart => true } do |f| %>
-		<h4 class="form-title">All the inputs with the <span class="green">asterisk (*)</span> sign are compulsory to fill.</h4>
-		
-		
-			<%= f.text_field :headline, :class=> "form-control required", :placeholder=>"Give a heading to your listing*" %>
-
-		
-			<h3>Listing pricing and other details</h3>
-			<%= f.text_field :askprice, :class=> "form-control required", :placeholder=>"Your selling price*" %>
-			<span class="helper-block">Price in USD</span>
-			<%= f.text_field :paypalemail, :class=> "form-control required", :placeholder=>"Your Paypal email address*" %>
-			<span class="helper-block">Paypal email will be kept private</span><br/> <br/>
-				<%= f.text_field :paypalfname, :class=> " required", :placeholder=>"Your First name in Paypal, required for verification*" %>
-				<%= f.text_field :paypallname, :class=> " required", :placeholder=>"Your Last name in Paypal, required for verification*" %>
-			
-		
-		
-			
-
-				<div class="existingPaperclipFiles">
-
-					<% if @listing.assets.exists? %>
-					<h3>Existing images.</h3>
-
-						<%  @listing.assets.take(5).each do |a| %>
-						<%= image_tag a.image.url('thumb') %>
-						<% end %>
-
-						<% else %>
-						<h3>Upload you verification images.</h3>
-						<%= f.fields_for :assets do |asset| %>
-						 <%= asset.file_field :image, :class=> "form-control" %>
-			            <% end %>
-
-						<% end %>
-
-
-
-
-
-
-				</div>
-<br/>
-<br/>
-	
-			
-		<%= f.submit "Update", :disable_with => 'Updating...', :class =>"btn redround" %>
-		<% end %>
-	</div>	
-	</div>
+<section class="long-form-section">
+	<div class="header silver-color offshadow">
+		<h1 class="page-title">All iPads</h1>
 </div>
+<div class="container">
+	<div class="row">
+	
+			<%= form_for @listing, :class=>"form-horizontal", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
+			<p><%=f.label:devicename, "Name of your Phone" %>	<%= f.text_field :devicename, :class=> "required", :placeholder=>"Name of your Phone" %></p>
+			<%=f.label:devicestorage, "Storage capacity" %>	<div class="btn-group"  data-toggle="buttons">
+			  <label class="btn clouds-flat-button active">
+			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 8 GB
+			  </label>
+			  <label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option2" autocomplete="off"> 16 GB
+			  </label>
+			  <label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option3" autocomplete="off"> 32 GB
+			  </label>
+			<label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option4" autocomplete="off"> 64 GB
+			  </label>
+			<label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option5" autocomplete="off"> 128 GB
+			  </label>
+			</div>
+			<p></p>
+			<%=f.label:devicecolor, "Color of your phone" %>
+			<div class="btn-group" data-toggle="buttons">
+			  <label class="btn clouds-flat-button active">
+			    <input type="radio" name="options" id="option1" autocomplete="off" checked> Black
+			  </label>
+			  <label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option2" autocomplete="off"> White
+			  </label>
+			  <label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option3" autocomplete="off"> Gray
+			  </label>
+			<label class="btn clouds-flat-button">
+			    <input type="radio" name="options" id="option4" autocomplete="off"> Gold
+			  </label>
+			<div class="select select-large btn clouds-flat-button">
+			    <select class="btn clouds-flat-button">
+			      <option disabled="" selected="">Other</option>
+			        <option data-icon-class="icon-star-alt" data-name="Loft" data-type-id="35">
+			          Loft
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Cabin" data-type-id="4">
+			          Cabin
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Villa" data-type-id="11">
+			          Villa
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Castle" data-type-id="5">
+			          Castle
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Dorm" data-type-id="9">
+			          Dorm
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Treehouse" data-type-id="6">
+			          Treehouse
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Boat" data-type-id="8">
+			          Boat
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Plane" data-type-id="28">
+			          Plane
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Camper/RV" data-type-id="32">
+			          Camper/RV
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Igloo" data-type-id="12">
+			          Igloo
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Lighthouse" data-type-id="10">
+			          Lighthouse
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Yurt" data-type-id="15">
+			          Yurt
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Tipi" data-type-id="16">
+			          Tipi
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Cave" data-type-id="18">
+			          Cave
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Island" data-type-id="19">
+			          Island
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Chalet" data-type-id="22">
+			          Chalet
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Earth House" data-type-id="23">
+			          Earth House
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Hut" data-type-id="24">
+			          Hut
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Train" data-type-id="25">
+			          Train
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Tent" data-type-id="34">
+			          Tent
+			        </option>
+			        <option data-icon-class="icon-star-alt" data-name="Other" data-type-id="33">
+			          Other
+			        </option>
+			    </select>
+			  </div>
+			</div>
+
+
+			<p><%=f.label:devicecondition, "Condition of the device" %>	<%= f.text_field :devicecondition, :class=> "required", :placeholder=>"ex: mint, good, fair, new, new-retail" %></p>
+			<p><%=f.label:askprice, "How much you want to sell it for?" %>	<%= f.text_field :askprice, :class=> "required", :placeholder=>"amount in SGD" %></p>
+
+			<hr class="gray">
+
+			<hr class="gray">
+
+				<p><%=f.label:headline, "Title for your listing" %>	<%= f.text_field :headline, :class=> "required", :placeholder=>"this will appear in our search results, so be creative it's your chance to sell." %></p>
+					<p><%=f.label:description, "Describe your listing" %>	<%= f.text_area :description, :class=> "required", :placeholder=>"Write more about your phone, which will let the buyer make a decision" %></p>
+
+					<hr class="gray">
+
+			<hr class="gray">
+				<p><%=f.label:deviceimei, "Phone's IMEI number" %>	<%= f.text_field :deviceimei, :class=> "required", :placeholder=>"IMEI needed for verification. Will be kept private" %></p>
+
+					<p><%=f.label:paypalemail, "Your paypal email" %>	<%= f.text_field :paypalemail, :class=> "required", :value=>"#{current_user.email}" %></p>
+
+						<p><%=f.label:paypalfname, "First name in paypal" %>	<%= f.text_field :paypalfname, :class=> "required", :placeholder=>"Paypal first name is needed for verification" %></p>
+
+
+							<p><%=f.label:paypallaname, "Last name in paypal" %>	<%= f.text_field :paypallname, :class=> "required", :placeholder=>"Last name in paypal is collected for verification." %></p>
+
+			<hr class="gray">
+
+
+											<div class="newPaperclipFiles">
+
+											        <%= f.fields_for :assets do |asset| %>
+
+											           <% if asset.object.new_record? %>
+											                 <p><%= asset.file_field :image, :class=> "custom-file-input" %></p>
+											           <% end %>
+
+											       <% end %>
+
+
+			</div>
+						<input type="text" name="foo" style="display: none;">
+
+
+										<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
+									<% end %>
+	</div>
+		</div>
+	</div>
+</section>
+
+	
+
+		
