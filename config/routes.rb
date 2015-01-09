@@ -1,6 +1,7 @@
 Phoneclone::Application.routes.draw do
 
 
+  mount_opro_oauth
   get "adminactions/deletelisting"
   get "adminactions/deletecomment"
   get "adminactions/modifylisting"

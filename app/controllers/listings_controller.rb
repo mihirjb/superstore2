@@ -1,12 +1,19 @@
 class ListingsController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:show]
+  allow_oauth! :except => :delete
   impressionist :actions=>[:show]
   layout "forms", :only => [:new, :edit]
   
   def index
     @listings = current_user.listings.all
-    
+    respond_to do |format|
+      format.html
+      format.json do
+        # User#to_public_json will remove sensitive elements from the user object
+        render :json => @listing.to_public_json
+      end
+    end
   end
 
   def new
