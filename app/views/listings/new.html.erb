@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="row">
 	
-			<%= form_for @listing, :class=>"form-horizontal", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
+			<%= form_for @listing, :class=>"new_listing long-form", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
 			<p><%=f.label:devicename, "Name of your Phone" %>	<%= f.text_field :devicename, :class=> "required", :placeholder=>"Name of your Phone" %></p>
 			<%=f.label:devicestorage, "Storage capacity" %>	<div class="btn-group"  data-toggle="buttons">
 			  <label class="btn clouds-flat-button active">

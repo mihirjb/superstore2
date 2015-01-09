@@ -925,6 +925,40 @@ div.custom-message form input[type="submit"]
 {
 	font-size:1.2em;
 }
+
+/************Comments***************/
+
+div.comment
+{
+background-color:#fff;
+margin:5px 0px;
+padding:5px 10px;
+overflow:auto;
+}
+div.comment img
+{
+	margin:-10px 0px 0px -5px;
+	width:50px;
+	float:left;
+	padding:5px;
+	background-color:#fff;
+	border:1px solid #fcfcfc;
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	
+}
+p.comment-body
+{
+	padding:10px;
+	background-color:#fcfcfc;
+	border-radius:8px;
+	border:1px solid #ccc;
+	
+}
+
+
 /************footer****************/
 div#footer
 {
