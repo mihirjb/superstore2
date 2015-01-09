@@ -1,4 +1,15 @@
 <% content_for :title, "#{@listing.headline}  in Singapore" %>
+<div class="row snapshot silver-color offshadow">
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecolor %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecondition %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicestorage %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.itemlocation %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.paypalstatus %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 ">4 <span class="glyphicon glyphicon-camera"></span></div>
+	<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= @listing.accessories %></div>
+</div>
 
 <section class="show white-color">
 <div class=" container">
