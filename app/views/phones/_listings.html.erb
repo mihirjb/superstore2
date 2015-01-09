@@ -3,26 +3,25 @@
 <div class="single-listing">
 <div class="row">
 	<div class="col-md-1">
-		<%= image_tag @phone.image.url(:thumb), :class => "owner-image" %>
+		<%=image_tag Profile.where('user_id = ?',l.user_id).first.avatar.url(:mini), :class => "main-avatar small-img owner-image" %>
 	</div>
 	<div class="col-md-7 col-sm-7 col-xs-12"><h2><%= l.headline %></h2>
 		<p><%= l.description %></p>
 	</div>
 	<div class="col-md-4">
-		
-			<a href="/listings/?l=<%=l.id%>" class="btn red-color buy-btn pull-right">$<%= l.askprice.to_i + 20 %></a>
+			<a href="/listings/l=<%=l.id%>" class="btn red-color buy-btn pull-right">$<%= l.askprice.to_i + 20 %></a>
 	</div>
 </div>
 <div class="row summary">
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= @phone.modelname %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= l.devicecolor %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= l.devicecondition %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= l.devicestorage %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= l.itemlocation %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p><%= l.paypalstatus %></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p>55 <span class="glyphicon glyphicon-thumbs-up"></span></p></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><p>4 <span class="glyphicon glyphicon-camera"></span></p></div>
-	<div class="col-md-4 col-sm-4 col-xs-4 "><p>Accessories: <%= l.accessories %></p></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.devicecolor %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.devicecondition %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.devicestorage %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.itemlocation %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.paypalstatus %></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
+	<div class="col-md-1 col-sm-4 col-xs-4 ">4 <span class="glyphicon glyphicon-camera"></span></div>
+	<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= l.accessories %></div>
 </div>
 </div>
 <% end %>
