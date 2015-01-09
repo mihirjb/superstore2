@@ -10,12 +10,12 @@
 				
 					<%= form_for @listing, :class=>"long-form", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
 					
-					<%= f.label :devicename, " Name of your phone" %>
-					<%= f.text_field :devicename %>
-					<%= f.label :devicestorage, "Storage capacity" %>
-					<%= f.text_field :devicestorage %>
-					<%= f.label :devicecolor, " Device Color" %>
-					<%= f.text_field :devicecolor %>
+					<p><%= f.label :devicename, " Name of your phone" %>
+					<%= f.text_field :devicename %></p>
+					<p><%= f.label :devicestorage, "Storage capacity" %>
+					<%= f.text_field :devicestorage %></p>
+					<p><%= f.label :devicecolor, " Device Color" %>
+					<%= f.text_field :devicecolor %></p>
 					
 
 												<%= f.hidden_field :status, :value=>"Pending" %>
@@ -28,7 +28,7 @@
 													        <%= f.fields_for :assets do |asset| %>
 
 													           <% if asset.object.new_record? %>
-													                 <%= asset.file_field :image, :class=> "" %>
+													                 <p><%= asset.file_field :image, :class=> "" %></p>
 													           <% end %>
 
 													       <% end %>
