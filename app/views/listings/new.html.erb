@@ -2,160 +2,170 @@
 
 <section class="long-form-section">
 	<div class="header silver-color offshadow">
-		<h1 class="page-title">All iPads</h1>
+		<h1 class="page-title auth-form-heading">List your phone</h1>
+		<p class="sub">Free to sell, so you keep all the money</p>
 </div>
-<div class="container">
-	<div class="row">
-	
+<div class="container">	
 			<%= form_for @listing, :class=>"new_listing long-form", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
-			<p><%=f.label:devicename, "Name of your Phone" %>	<%= f.text_field :devicename, :class=> "required", :placeholder=>"Name of your Phone" %></p>
-			<%=f.label:devicestorage, "Storage capacity" %>	<div class="btn-group"  data-toggle="buttons">
-			  <label class="btn clouds-flat-button active">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 8 GB
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 16 GB
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 32 GB
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option4" autocomplete="off"> 64 GB
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option5" autocomplete="off"> 128 GB
-			  </label>
-			</div>
-			<p></p>
-			<%=f.label:devicecolor, "Color of your phone" %>
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn clouds-flat-button active">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> Black
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> White
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> Gray
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option4" autocomplete="off"> Gold
-			  </label>
-			<div class="select select-large btn clouds-flat-button">
-			    <select class="btn clouds-flat-button">
-			      <option disabled="" selected="">Other</option>
-			        <option data-icon-class="icon-star-alt" data-name="Loft" data-type-id="35">
-			          Loft
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Cabin" data-type-id="4">
-			          Cabin
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Villa" data-type-id="11">
-			          Villa
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Castle" data-type-id="5">
-			          Castle
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Dorm" data-type-id="9">
-			          Dorm
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Treehouse" data-type-id="6">
-			          Treehouse
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Boat" data-type-id="8">
-			          Boat
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Plane" data-type-id="28">
-			          Plane
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Camper/RV" data-type-id="32">
-			          Camper/RV
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Igloo" data-type-id="12">
-			          Igloo
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Lighthouse" data-type-id="10">
-			          Lighthouse
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Yurt" data-type-id="15">
-			          Yurt
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Tipi" data-type-id="16">
-			          Tipi
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Cave" data-type-id="18">
-			          Cave
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Island" data-type-id="19">
-			          Island
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Chalet" data-type-id="22">
-			          Chalet
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Earth House" data-type-id="23">
-			          Earth House
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Hut" data-type-id="24">
-			          Hut
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Train" data-type-id="25">
-			          Train
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Tent" data-type-id="34">
-			          Tent
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Other" data-type-id="33">
-			          Other
-			        </option>
-			    </select>
-			  </div>
-			</div>
+
+				<% if @listing.errors.full_messages.any? %>
+				<div id="error_explanation">
+				<h2>Please rectify the following errors</h2>
+				<ul>
+				<% @listing.errors.full_messages.each do |error_message| %>
+				<li><%= error_message %></li>
+				<% end %>
+				</div>
+				<% end %>
 
 
-			<p><%=f.label:devicecondition, "Condition of the device" %>	<%= f.text_field :devicecondition, :class=> "required", :placeholder=>"ex: mint, good, fair, new, new-retail" %></p>
-			<p><%=f.label:askprice, "How much you want to sell it for?" %>	<%= f.text_field :askprice, :class=> "required", :placeholder=>"amount in SGD" %></p>
+				<h3 class="form-heading">Basic Information</h3>
+					<br/><%=f.label:country, "Your Market" %>
 
-			<hr class="gray">
+					<%= f.select :country , [['Singapore','Singapore']],  :autofocus => true%>
+					<br/>
+					<span class="helper-block">You can only sell in one market at one time. Currently we are live only in Singapore. Stay tuned for more markets.</span><br/><br/>
+				<%= f.text_field :headline, :class=> " required", :placeholder=>"Give a heading to your listing*"%>
 
-			<hr class="gray">
+				<%= f.text_area :description, :class=> "required", :placeholder=>"Describe your phone a little*" %>
 
-				<p><%=f.label:headline, "Title for your listing" %>	<%= f.text_field :headline, :class=> "required", :placeholder=>"this will appear in our search results, so be creative it's your chance to sell." %></p>
-					<p><%=f.label:description, "Describe your listing" %>	<%= f.text_area :description, :class=> "required", :placeholder=>"Write more about your phone, which will let the buyer make a decision" %></p>
+				<hr class="gray">
 
-					<hr class="gray">
+					<h3 class = "required">Condition of the device (required)</h3>
 
-			<hr class="gray">
-				<p><%=f.label:deviceimei, "Phone's IMEI number" %>	<%= f.text_field :deviceimei, :class=> "required", :placeholder=>"IMEI needed for verification. Will be kept private" %></p>
+				<%= f.radio_button :devicecondition, :Mint  %>	<%= f.label :devicecondition, " Mint" %>
+				<ul>
+					<li>Functions flawlessly</li>
+					<li>Perfect screen condition</li>
+					<li>No signs of use</li>
+					</ul>
 
-					<p><%=f.label:paypalemail, "Your paypal email" %>	<%= f.text_field :paypalemail, :class=> "required", :value=>"#{current_user.email}" %></p>
+				<%= f.radio_button :devicecondition, :Good %> <%= f.label :devicecondition, " Good" %>
+				<ul>
+					<li>Functions flawlessly</li>
+					<li>Good screen condition</li>
+					<li>Few Cosmetic imperfections</li>
+					</ul>
 
-						<p><%=f.label:paypalfname, "First name in paypal" %>	<%= f.text_field :paypalfname, :class=> "required", :placeholder=>"Paypal first name is needed for verification" %></p>
+				<%= f.radio_button :devicecondition, :Fair %> <%= f.label :devicecondition, " Fair" %>
+					<ul>
+						<li>Functions flawlessly</li>
+						<li>Good screen condition</li>
+						<li>Some scratches or worn paint</li>
+						</ul>
+
+						<%= f.radio_button :devicecondition, :New %> <%= f.label :devicecondition, " New" %>
+								<ul>
+									<li>Never activated, rooted, or refurbished</li>
+									<li>Includes original box and all accessories</li>
+									<li>No signs of use</li>
+									</ul>
+
+									<hr class="gray">
+									<h3>Listing pricing and payment details</h3>
+
+									<%= f.text_field :askprice, :class=> " required", :placeholder=>"Your selling price*" %>			
+									<%= f.text_field :paypalemail, :class=> " required", :placeholder=>"Your Paypal email address*" %>
+									<span class="helper-block">Will be kept private</span>
+									<br/><br/>
+									<%= f.text_field :paypalfname, :class=> " required", :placeholder=>"Your First name in Paypal, required for verification*" %>
+									<%= f.text_field :paypallname, :class=> " required", :placeholder=>"Your Last name in Paypal, required for verification*" %>
+
+									<hr class="gray">
+
+									<h3>Device Details</h3>
+									<%= f.text_field :devicename,  :value=> Phone.find(params[:pid]).modelname, :readonly => true %>
+									<br/>
+									<%=f.label:devicecarrier, "Service Provider" %>
+
+									<%= f.select :devicecarrier , [['Unlocked','Unlocked'], ['SingTel','SingTel'], ['Starhub','Starhub'], ['M1','M1'], ['Others','Others']],  :autofocus => true%>
+									<br/>
+									<%= f.hidden_field :phone_id, :value=> params[:pid] %>
+									<%= f.text_field :deviceimei, :class=> " required", :placeholder=>"IMEI/ESN/MEID number*" %>
+									<span class="helper-block">Will be kept private</span><br/><br/>
+
+										<div class="radgrp"><%= f.label:devicecolor, "Color of the device*" %>
+										<div class="radbtns"><%= f.radio_button :devicecolor, "Black" %> <%= f.label:devicecolor, "Black" %></div>
+										<div class="radbtns"><%= f.radio_button :devicecolor, "White" %> <%= f.label:devicecolor, "White" %></div>
+										<div class="radbtns"><%= f.radio_button :devicecolor, "Silver" %> <%= f.label:devicecolor, "Silver" %></div>
+										<div class="radbtns"><%= f.radio_button :devicecolor, "Gray" %> <%= f.label:devicecolor, "Gray"%></div></div>													
+
+										<div class="radgrp"><%= f.label:devicestorage, "Storage capacity of the device*" %>
+														<div class="radbtns"><%= f.radio_button :devicestorage, "8gb" %> <%= f.label:devicestorage, "8 GB" %></div>
+														<div class="radbtns"><%= f.radio_button :devicestorage, "16gb" %> <%= f.label:devicestorage, "16 GB" %></div>
+														<div class="radbtns"><%= f.radio_button :devicestorage, "32gb" %> <%= f.label:devicestorage, "32 GB" %></div>
+														<div class="radbtns"><%= f.radio_button :devicestorage, "64gb" %> <%= f.label:devicestorage, "64 GB" %></div>
+														<div class="radbtns"><%= f.radio_button :devicestorage, "128gb" %> <%= f.label:devicestorage, "128 GB" %></div></div>
+
+									<div class="radgrp"><%= f.label:modified, "Has the device been modified in any way. rooted or something? (required)" %>
+									<div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
+									<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></div>
+									<%= f.text_area :moddetails,  :placeholder=>"Describe your modification if you have modified the device in any way." %>
+
+									<%= f.text_field :accessories, :class=> " required", :placeholder=>"List of accessories with the phone*" %>
 
 
-							<p><%=f.label:paypallaname, "Last name in paypal" %>	<%= f.text_field :paypallname, :class=> "required", :placeholder=>"Last name in paypal is collected for verification." %></p>
+									<hr class="gray">
 
-			<hr class="gray">
+									<h3>Shipping Details</h3>
+
+									<%= f.text_field :itemlocation, :class=> " required", :placeholder=>"Name of the city where the item is*" %><br/>
+										<div class="radgrp"><%= f.label :paypalconfirmed, "Do you want the buyer to have paypal comfirmed shipping address?*" %>
+										<div class="radbtns"><%= f.radio_button :paypalconfirmed, :true %> <%= f.label:paypalconfirmed, " Yes" %></div>
+										<div class="radbtns"><%= f.radio_button :paypalconfirmed, :false %> <%= f.label:paypalconfirmed, " No" %></div></div>
+										
+
+									<div class="radgrp"><%= f.label:shipinternationally, "Will you ship internationally? (required)" %>
+									<div class="radbtns"><%= f.radio_button :shipinternationally, :true %>  <%= f.label:shipinternationally, " Yes" %></div>
+									<div class="radbtns"><%= f.radio_button :shipinternationally, :false %> <%= f.label:shipinternationally, " No" %></div>
+									</div>
+								
+
+									<%= f.text_area :shippingdetails,  :placeholder=>"Details on how you will ship internationally, if you do." %>
 
 
+									<hr class="gray">
+									<h3>Return policy</h3>
+										<div class="radgrp"><%= f.label:returnsallowed, "Will you accept returns? (required)" %>
+										<div class="radbtns"><%= f.radio_button :returnsallowed, :true %> <%= f.label:returnsallowed, " Yes" %></div>
+										<div class="radbtns"><%= f.radio_button :returnsallowed, :false %> <%= f.label:returnsallowed, " No" %></div>
+										</div>
+										<%= f.text_area :returnpolicy,  :placeholder=>"Your return policy, if you accept reutrns." %>
+
+									<hr class="gray">
+										<%= f.hidden_field :status, :value=>"Pending" %>
+
+										<h3>Upload pictures.</h3>
+
+					<p class="helper-block alert alert-danger">If you upload pictures now, then you'll not be allowed to add more pictures later. But if you don't then you can add pictures by editing the listing. So we say upload them later by editing the same listing.</p>
 											<div class="newPaperclipFiles">
 
 											        <%= f.fields_for :assets do |asset| %>
 
 											           <% if asset.object.new_record? %>
-											                 <p><%= asset.file_field :image, :class=> "custom-file-input" %></p>
+											                 <%= asset.file_field :image, :class=> "" %>
 											           <% end %>
 
 											       <% end %>
 
+									<hr class="gray">
+										<h4>TERMS & CONDITIONS</h4>
+										<ul>
+										<li>Once your device sells you will be expected to ship it to the buyer within two (2) business days of receiving payment.</li><li>
+										Once your device sells you will need to ensure it is un-registered from your carrier's account (if applicable).</li><li>
+										If you have your device is listed on other services (e.g. eBay, Craigslist), it is your responsibility to remove the listing from our site immediately if your device sells elsewhere.</li><li>
+										You will be asked to provide a "verification photo" showing your listing code (assigned after listing is created) written on a piece of paper next to the device you're selling.</li><li>
+										You must be capable of receiving payments via PayPal and be willing to accept their fees.</li><li>
+										The same device cannot be listed in multiple international markets at the same time.</li></ul>
 
+						 <h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
 			</div>
 						<input type="text" name="foo" style="display: none;">
 
 
+									<hr class="gray">
 										<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
 									<% end %>
-	</div>
-		</div>
 	</div>
 </section>
 

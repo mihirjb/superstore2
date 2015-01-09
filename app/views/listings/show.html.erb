@@ -24,7 +24,7 @@
 			
 		</p>
 		<% if @listing.status == "Approved"%>	
-			<h1><a href="/transactions/initiatetransaction?l=<%=@listing.id%>" class="btn green-color buy-btn">Buy now - $<%=@listing.askprice.to_i + 20 %></a></h1>
+			<h1><a href="/transactions/initiatetransaction?l=<%=@listing.id%>" class="btn green-sea-flat-button">Buy now - $<%=@listing.askprice.to_i + 20 %></a></h1>
 		<% end %>
 
 			<% if @listing.status == "Pending"%>	
@@ -50,7 +50,7 @@
 	
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
-		    	<div class="image-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
+		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
 			<%end%>
 	</div>
 
@@ -179,7 +179,7 @@
 			<input type="text" name="foo" style="display: none;">
 
 		<div class="form-group">
-			<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn btn-primary btn-lg" %></div>
+			<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn bt-sm input-btn red-color" %></div>
 
 		<% end %>
 			</div>
@@ -201,7 +201,6 @@
 	<% end %>
 <hr class="gray">
 <h4> Add a new Comment</h4>
-<hr class="gray">
 		<% if user_signed_in? %>
 		<div class="comment-form">
 			<%= form_for @comment, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
@@ -216,7 +215,7 @@
 
 
 	<div class="form-group">
-	<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn btn-sm redround submit" %></div>
+	<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn btn-sm input-btn red-color" %></div>
 	</div>
 	<% end %>
 
