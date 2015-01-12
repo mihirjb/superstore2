@@ -11,10 +11,10 @@
 		
 		</div>
 			<div class="row snapshot">
-				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @phone.modelname %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicecolor %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicestorage %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.itemlocation %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Phone:<br/><%= @phone.modelname %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Color:<br/><%= @listing.devicecolor %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Memory:<br/><%= @listing.devicestorage %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Location:<br/><%= @listing.itemlocation %></div>
 			</div>
 		<hr class="green">
 		<h3><%= @listing.headline %></h3>
@@ -39,7 +39,7 @@
 		
 	</div>
 	<div class="summary white-color offshadow cushion">
-		<h4>Listed by
+		<h4>Listed by</h4>
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %>
