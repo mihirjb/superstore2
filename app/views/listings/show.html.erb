@@ -47,7 +47,7 @@
 	
 </div>
 <div class="col-md-7">
-	<div class="white-color offshadow cushion listing-detail">
+<div class="white-color offshadow cushion listing-detail">
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
 		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
@@ -154,7 +154,8 @@
 
 
 
-<div class="col-md-12 white-color offshadow">
+<div class="col-md-12">
+<div class="white-color offshadow cushion">
 		<% cache @comments do%>
 		<%= render partial: 'listings/comments' %>
 		<% end %>	
@@ -177,6 +178,7 @@
 	</form></div>
 	</div>
 
+</div>
 </div>
 
 
