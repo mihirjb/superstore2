@@ -19,9 +19,7 @@
 		<hr class="green">
 		<h3><%= @listing.headline %></h3>
 		<p><%= @listing.description %>
-			
-			<span class="cushion"><%= social_share_button_tag(@listing.headline) %></span>
-			
+				
 		</p>
 	
 		
@@ -53,9 +51,11 @@
 <div class="col-md-7">
 <div class="white-color offshadow cushion listing-detail">
 	<div>
+		<span class="cushion pull-left"><%= social_share_button_tag(@listing.headline) %></span>
+		
 			<% if user_signed_in?  %>
 				<% if current_user.id == @listing.user_id %>
-				<h1><a href="/listings/<%=@listing.id%>/edit" class="pull-right">Edit Listing</a></h1>
+				<h4><a href="/listings/<%=@listing.id%>/edit" class="pull-right">Edit Listing</a></h4>
 			    <% end %>
 			<% end %>
 	</div>
