@@ -1,9 +1,12 @@
 /*
- *= require_tree .
  *= require_self
+ *= require fancybox
+ *= require_tree .
  */
+
 @import "bootstrap-sprockets";
 @import 'bootstrap';
+@import 'social-share-button';
 
 /*********************homepage styles****************************/
 div#hero

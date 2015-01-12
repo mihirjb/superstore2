@@ -36,18 +36,14 @@
 			<h1 class="outlined-heading black-outline">Listing has been sold.</h1>
 			<% end %>														
 
-		<% if user_signed_in?  %>
-			<% if current_user.id == @listing.user_id %>
-			<h1><a href="/listings/<%=@listing.id%>/edit" class="btn green-sea-flat-button">Edit Listing</a></h1>
-		    <% end %>
-		<% end %>		
+	
 	
 		
 	</div>
 	<div class="summary white-color offshadow">
-		<img src="/owner.jpg" class="owner-image"/>
+		<img src="/bull.png" class="owner-image"/>
 		<div class="row snapshot">
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Member Since:<%= @listing.paypalstatus %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Member Since: 24th Dec 2014</div>
 				<div class="col-md-3 col-sm-3 col-xs-3 ">Paypal: <%= @listing.paypalstatus %></div>
 				<div class="col-md-3 col-sm-3 col-xs-3 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
 				<div class="col-md-3 col-sm-3 col-xs-3 ">4 <span class="glyphicon glyphicon-camera"></span></div>
@@ -56,6 +52,13 @@
 </div>
 <div class="col-md-7">
 <div class="white-color offshadow cushion listing-detail">
+	<div>
+			<% if user_signed_in?  %>
+				<% if current_user.id == @listing.user_id %>
+				<h1><a href="/listings/<%=@listing.id%>/edit" class="pull-right">Edit Listing</a></h1>
+			    <% end %>
+			<% end %>
+	</div>
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
 		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
