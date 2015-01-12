@@ -39,8 +39,10 @@
 		
 	</div>
 	<div class="summary white-color offshadow cushion">
-		
-		<p><img src="/bull.png" class="owner-image pull-left"/>
+		<div class="centered-text">
+				<%= image_tag Profile.find_by_user_id(c.user_id).avatar.url(:mini), :class => "img-circle" unless @profile.nil? %>
+		</div>
+		<p>
 			Listed by: <%= @author.firstname%><br/>
 		Member Since: <%= @author.created_at.to_date %><br/>
 		Reviews: 55 <span class="glyphicon glyphicon-thumbs-up"></span><br/>
