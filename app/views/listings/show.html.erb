@@ -45,8 +45,6 @@
 		
 	</div>
 	
-
-	
 </div>
 <div class="col-md-7">
 	<div class="white-color offshadow cushion listing-detail">
@@ -150,29 +148,16 @@
 			<% end %>
 		</div>
 	</div>
+	
+</div>
 </div>
 
 
 
 <div class="col-md-12 white-color offshadow">
-
-
-
-		
-		<div class="comments-list">
-			<h4> Comments (1)</h4>
-		<div class="comment">
-			<img alt="Missing" class="img-circle" src="/images/profiles/avatars/mini/missing.png">
-		<p class="comment-body">
-		<strong>Mihir </strong><br>
-				Something something 
-	
-	<br><br>
-19 days ago	
-	</p></div>
-		
-		
-	
+		<% cache @comments do%>
+		<%= render partial: 'listings/comments' %>
+		<% end %>	
 <hr class="gray">
 <h4> Add a new Comment</h4>
 		<div class="comment-form">
