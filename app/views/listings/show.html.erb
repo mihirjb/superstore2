@@ -48,8 +48,8 @@
 
 	
 </div>
-<div class="col-md-7 white-color offshadow cushion">
-	
+<div class="col-md-7">
+	<div class="white-color offshadow cushion listing-detail">
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
 		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
@@ -150,6 +150,7 @@
 			<% end %>
 		</div>
 	</div>
+</div>
 
 </div>
 </div>
