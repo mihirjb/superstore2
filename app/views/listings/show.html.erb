@@ -40,18 +40,16 @@
 	</div>
 	<div class="summary white-color offshadow cushion">
 		<img src="/bull.png" class="owner-image"/>
-		<div class="row snapshot">
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Member Since: 24th Dec 2014</div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Paypal: <%= @listing.paypalstatus %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">4 <span class="glyphicon glyphicon-camera"></span></div>
-		</div>
+		<p>Listed by <%= @author.firstname%><br/>
+		Member Since: <%= @author.created_at.to_date %><br/>
+		Reviews: 55 <span class="glyphicon glyphicon-thumbs-up"></span><br/>
+		Last seen on: <%= @author.last_sign_in_at.to_date%>
 	</div>
 </div>
 <div class="col-md-7">
 <div class="white-color offshadow cushion listing-detail">
 	<div>
-		<span class="cushion pull-left"><%= social_share_button_tag(@listing.headline) %></span>
+	<%= social_share_button_tag(@listing.headline) %>
 		
 			<% if user_signed_in?  %>
 				<% if current_user.id == @listing.user_id %>
