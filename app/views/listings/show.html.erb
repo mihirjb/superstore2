@@ -1,17 +1,7 @@
 <% content_for :title, "#{@listing.headline}  in Singapore" %>
 <section class="show silver-color">
 <div class=" container">
-	<div class="row snapshot silver-color">
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecolor %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecondition %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicestorage %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.itemlocation %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.paypalstatus %></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
-		<div class="col-md-1 col-sm-4 col-xs-4 ">4 <span class="glyphicon glyphicon-camera"></span></div>
-		<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= @listing.accessories %></div>
-	</div>
+
 
 <div class="row">
 <div class="col-md-5">
@@ -20,18 +10,20 @@
 			<%= image_tag @phone.image.url(:medium)%>
 		
 		</div>
+			<div class="row snapshot">
+				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @phone.modelname %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicecolor %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicestorage %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.itemlocation %></div>
+			</div>
+		<hr class="green">
 		<h3><%= @listing.headline %></h3>
 		<p><%= @listing.description %>
 			
 			<%= social_share_button_tag(@listing.headline) %>
 			
 		</p>
-		<div class="row snapshot">
-			<div class="col-md-3 col-sm-3 col-xs-3 "><%= @phone.modelname %></div>
-			<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicecolor %></div>
-			<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.devicestorage %></div>
-			<div class="col-md-3 col-sm-3 col-xs-3 "><%= @listing.itemlocation %></div>
-		</div>
+	
 		
 		<% if @listing.status == "Approved"%>	
 			<h1><a href="/transactions/initiatetransaction?l=<%=@listing.id%>" class="btn green-sea-flat-button">Buy now - $<%=@listing.askprice.to_i + 20 %></a></h1>
@@ -52,7 +44,15 @@
 	
 		
 	</div>
-	
+	<div class="summary white-color offshadow">
+		<img src="/owner.jpg" class="owner-image"/>
+		<div class="row snapshot">
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Member Since:<%= @listing.paypalstatus %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">Paypal: <%= @listing.paypalstatus %></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
+				<div class="col-md-3 col-sm-3 col-xs-3 ">4 <span class="glyphicon glyphicon-camera"></span></div>
+		</div>
+	</div>
 </div>
 <div class="col-md-7">
 <div class="white-color offshadow cushion listing-detail">
