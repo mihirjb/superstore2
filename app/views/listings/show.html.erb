@@ -1,5 +1,5 @@
 <% content_for :title, "#{@listing.headline}  in Singapore" %>
-<section class="show white-color">
+<section class="show silver-color">
 <div class=" container">
 	<div class="row snapshot white-color offshadow">
 		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
@@ -22,16 +22,7 @@
 		<h3><%= @listing.headline %></h3>
 		<p><%= @listing.description %>
 			
-			<ul>
-			<li>Paypal Account: <strong><%= @listing.paypalstatus %></strong></li>
-			<li>Listed by <%= @author.email.split("@")[0] %></li>
-			<li>Member Since <%=@author.created_at.to_date() %></li>
-			<li>From <%= @profile.country unless @profile.nil? %></li>
-			<li>last updated on <%=@listing.updated_at.to_date %></li>
-			<li> <%=  link_to "View Seller's Profile",  "/profiles/#{@profile.id}" unless @profile.nil? %> </li>
-
-											</ul>
-			<%= social_share_button_tag(@listing.headline) %><br/>
+			<%= social_share_button_tag(@listing.headline) %>
 			
 		</p>
 		<% if @listing.status == "Approved"%>	
