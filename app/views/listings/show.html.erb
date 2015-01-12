@@ -1,21 +1,21 @@
 <% content_for :title, "#{@listing.headline}  in Singapore" %>
-<div class="row snapshot silver-color offshadow">
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecolor %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecondition %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicestorage %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.itemlocation %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.paypalstatus %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 ">4 <span class="glyphicon glyphicon-camera"></span></div>
-	<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= @listing.accessories %></div>
-</div>
-
 <section class="show white-color">
 <div class=" container">
+	<div class="row snapshot white-color offshadow">
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecolor %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicecondition %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.devicestorage %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.itemlocation %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 "><%= @listing.paypalstatus %></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 ">55 <span class="glyphicon glyphicon-thumbs-up"></span></div>
+		<div class="col-md-1 col-sm-4 col-xs-4 ">4 <span class="glyphicon glyphicon-camera"></span></div>
+		<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= @listing.accessories %></div>
+	</div>
+
 <div class="row">
 <div class="col-md-5">
-	<div class="summary white-color">
+	<div class="summary white-color offshadow">
 		<div class="center-image">
 			<%= image_tag @phone.image.url(:medium) %>
 		</div>
@@ -57,7 +57,7 @@
 
 	
 </div>
-<div class="col-md-7">
+<div class="col-md-7 white-color offshadow cushion">
 	
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
@@ -162,13 +162,8 @@
 
 </div>
 </div>
-</div>
 
-
-
-</section>
-<section class="comments silver-color">
-	<div class="container">
+	<div class="container white-color offshadow cushion">
 				<% if @comments.empty? %>
 
 				<div class="no-comments">
@@ -238,5 +233,10 @@
 
 		<% end %>
 </div>
+
+</div>
+
+
+
 </section>
 
