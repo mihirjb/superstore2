@@ -10,7 +10,7 @@
 			<%= image_tag @phone.image.url(:medium)%>
 		
 		</div>
-			<div class="row snapshot">
+			<div class="row">
 				<div class="col-md-3 col-sm-3 col-xs-3 ">Phone:<br/><%= @phone.modelname %></div>
 				<div class="col-md-3 col-sm-3 col-xs-3 ">Color:<br/><%= @listing.devicecolor %></div>
 				<div class="col-md-3 col-sm-3 col-xs-3 ">Memory:<br/><%= @listing.devicestorage %></div>
@@ -63,7 +63,6 @@
 <div class="col-md-7">
 <div class="white-color offshadow cushion listing-detail">
 	<div>
-	<%= social_share_button_tag(@listing.headline) %>
 		
 			<% if user_signed_in?  %>
 				<% if current_user.id == @listing.user_id %>
@@ -73,7 +72,7 @@
 	</div>
 		<div class="listing-images">
 			<%  @listing.assets.each do |a| %>											
-		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('original')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
+		    	<div class="img-container offshadow"><a class="fancybox" href="<%= a.image.url('large')%>" rel="group"><%= image_tag a.image.url('small') %></a></div>
 			<%end%>
 	</div>
 
