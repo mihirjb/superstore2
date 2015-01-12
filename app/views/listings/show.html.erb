@@ -151,82 +151,50 @@
 		</div>
 	</div>
 </div>
+</div>
+
+
+<div class="col-md-12 white-color offshadow cushion">
 
 
 
-	<div class="container white-color offshadow cushion">
-				<% if @comments.empty? %>
-
-				<div class="no-comments">
-				<h3>No comments for this listing. Be the first one to comment.</h3>
-				</div>
-				<% if user_signed_in? %>
-				<div class="comment-form">
-
-				<%= form_for @comment, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
-		<div class="form-group">
-			<%= f.text_area :commentbody, :class=> "form-control", :placeholder=>"Write Something here" %>
-			
-				<%= f.label :picture, "Upload any additional picture" %><%= f.file_field :picture %><br/>
-		</div>  
-			<%= f.hidden_field :listing_id, :value => @listing.id %>
-			<%= f.hidden_field :user_id, :value => current_user.id %>
-			<%= f.hidden_field :status, :value => "Pending" %>
-
-			<input type="text" name="foo" style="display: none;">
-
-		<div class="form-group">
-			<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn bt-sm input-btn red-color" %></div>
-
-		<% end %>
-			</div>
-
-		<% else %>
-		<%= link_to "Log in to comment", new_user_session_path, :class => "btn btn-success" %> 
-
-		<% end %>
-
-
-
-
-				<% else %>
-
-
-		<% cache @comments do %>
-
-		<%= render partial: 'listings/comments' %>
-	<% end %>
+		
+		<div class="comments-list">
+			<h4> Comments (1)</h4>
+		<div class="comment">
+			<img alt="Missing" class="img-circle" src="/images/profiles/avatars/mini/missing.png">
+		<p class="comment-body">
+		<strong>Mihir </strong><br>
+				Something something 
+	
+	<br><br>
+19 days ago	
+	</p></div>
+		
+		
+	
 <hr class="gray">
 <h4> Add a new Comment</h4>
-		<% if user_signed_in? %>
 		<div class="comment-form">
-			<%= form_for @comment, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
+			<form accept-charset="UTF-8" action="/comments" class="new_comment" enctype="multipart/form-data" id="new_comment" method="post" novalidate="novalidate"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="K7BVBsKDFqnSbrabuPJ2qAup+8U3CULowQrpG6PIQAE="></div>
 	<div class="form-group">
-		<%= f.text_area :commentbody, :class=> "form-control", :placeholder=>"Write something here" %>
-		<%= f.label :picture, "Upload any additional picture" %><%= f.file_field :picture %><br/>
+		<textarea class="form-control" id="comment_commentbody" name="comment[commentbody]" placeholder="Write something here"></textarea>
+		<label for="comment_picture">Upload any additional picture</label><input id="comment_picture" name="comment[picture]" type="file"><br>
 	</div>
-	<%= f.hidden_field :listing_id, :value => @listing.id %>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= f.hidden_field :status, :value => "Pending" %>
+	<input id="comment_listing_id" name="comment[listing_id]" type="hidden" value="6">
+	<input id="comment_user_id" name="comment[user_id]" type="hidden" value="1">
+	<input id="comment_status" name="comment[status]" type="hidden" value="Pending">
 	<input type="text" name="foo" style="display: none;">
 
 
 	<div class="form-group">
-	<%= f.submit "Add a comment", :disable_with => 'Adding...', :class =>"btn btn-sm input-btn red-color" %></div>
-	</div>
-	<% end %>
+	<input class="btn btn-sm input-btn red-color" disable_with="Adding..." name="commit" type="submit" value="Add a comment"></div>
+	</form></div>
 
-	<% else %>
-	<%= link_to "Log in to comment", new_user_session_path, :class => "btn btn-success" %> 
-
-		<% end %>
 		</div>
 
-		<% end %>
 </div>
 
-</div>
-</div>
 </div>
 
 
