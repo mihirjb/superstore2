@@ -41,7 +41,7 @@
 	<div class="summary white-color offshadow cushion">
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<%= image_tag @profile.avatar.url(:mini), :class => "img-circle" unless @profile.nil? %>
+				<%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %>
 				<%= @author.firstname%><br/>
 				Reviews: 55 <span class="glyphicon glyphicon-thumbs-up"></span><br/>
 			</div>
@@ -53,9 +53,7 @@
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
 			</div>
-		</div>
-		<p>
-		
+		</div>		
 	</div>
 </div>
 <div class="col-md-7">
