@@ -17,18 +17,8 @@
 <div class="col-md-5">
 	<div class="summary white-color offshadow">
 		<div class="center-image">
-			<%= image_tag @phone.image.url(:medium), :class =>"pull-left" %>
-			<ul>
-			<li>Device: <%= @phone.modelname %></li>
-			<li>Color: <%= @listing.devicecolor %></li>
-			<li>Conditon: <%= @listing.devicecondition %></li>
-			<li>Storage: <%= @listing.devicestorage %></li>
-			<li>Location: <%= @listing.itemlocation %></li>
-			<li>Paypal Status: <%= @listing.paypalstatus %></li>
-			<li>Reviews: 4 <span class="glyphicon glyphicon-camera"></span></li>
-			<li>Accessories: <%= @listing.accessories %></li>
-		</ul>
-			
+			<%= image_tag @phone.image.url(:medium)%>
+		
 		</div>
 		<h3><%= @listing.headline %></h3>
 		<p><%= @listing.description %>
