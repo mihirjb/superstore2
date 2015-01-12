@@ -39,8 +39,9 @@
 		
 	</div>
 	<div class="summary white-color offshadow cushion">
-		<img src="/bull.png" class="owner-image"/>
-		<p>Listed by <%= @author.firstname%><br/>
+		
+		<p><img src="/bull.png" class="owner-image pull-left"/>
+			Listed by: <%= @author.firstname%><br/>
 		Member Since: <%= @author.created_at.to_date %><br/>
 		Reviews: 55 <span class="glyphicon glyphicon-thumbs-up"></span><br/>
 		Last seen on: <%= @author.last_sign_in_at.to_date%>
@@ -53,7 +54,7 @@
 		
 			<% if user_signed_in?  %>
 				<% if current_user.id == @listing.user_id %>
-				<h4><a href="/listings/<%=@listing.id%>/edit" class="pull-right">Edit Listing</a></h4>
+		<a href="/listings/<%=@listing.id%>/edit" class="bigger-font pull-right">Edit Listing</a>
 			    <% end %>
 			<% end %>
 	</div>
