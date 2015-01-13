@@ -10,8 +10,8 @@
 				
 					<%= form_for @listing, :id => "listing-form",  :role => "form", :html => {:class=>"long-form", :multipart => true } do |f| %>
 					<div class="form-group">
-					<p><%= f.label :heading, " Title of your listing" %>
-					<%= f.text_field :heading %></p>
+					<p><%= f.label :headline, " Title of your listing" %>
+					<%= f.text_field :headline %></p>
 					<p><%= f.label :description, " Describe your phone a little" %>
 					<%= f.text_field :description %></p>
 					</div>
