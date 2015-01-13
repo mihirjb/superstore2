@@ -23,7 +23,8 @@
 					<p><%= f.label :devicecondition, " Device Condition" %>
 					<%= f.text_field :devicecondition %></p>
 					<p><%= f.label :modified, " Please describe if the device is modified in any way" %>
-					<%= f.text_field :modified %></p>
+						<div class="radgrp"><div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
+						<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></div></p>
 					<p><%= f.label :deviceimei, " Imei Number" %>
 					<%= f.text_field :deviceimei %></p>
 					<p><%= f.label :askprice, " Your asking price" %>
