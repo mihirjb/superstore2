@@ -12,30 +12,26 @@
 					
 					<p><%= f.label :devicename, " Name of your phone" %>
 					<%= f.text_field :devicename %></p>
-					<p><%= f.label :devicestorage, "Storage capacity" %>
-					<%= f.text_field :devicestorage %></p>
-					<p><%= f.label :devicecolor, " Device Color" %>
-					<%= f.text_field :devicecolor %></p>
-					
+											<p class="radgrp"><%= f.label:devicecolor, "Color of the device*" %>
+						<div class="radbtns"><%= f.radio_button :devicecolor, "Black" %> <%= f.label:devicecolor, "Black" %></div>
+						<div class="radbtns"><%= f.radio_button :devicecolor, "White" %> <%= f.label:devicecolor, "White" %></div>
+						<div class="radbtns"><%= f.radio_button :devicecolor, "Silver" %> <%= f.label:devicecolor, "Silver" %></div>
+						<div class="radbtns"><%= f.radio_button :devicecolor, "Gray" %> <%= f.label:devicecolor, "Gray"%></div></p>													
+						
+						<p class="radgrp"><%= f.label:devicestorage, "Storage capacity of the device*" %>
+										<div class="radbtns"><%= f.radio_button :devicestorage, "8gb" %> <%= f.label:devicestorage, "8 GB" %></div>
+										<div class="radbtns"><%= f.radio_button :devicestorage, "16gb" %> <%= f.label:devicestorage, "16 GB" %></div>
+										<div class="radbtns"><%= f.radio_button :devicestorage, "32gb" %> <%= f.label:devicestorage, "32 GB" %></div>
+										<div class="radbtns"><%= f.radio_button :devicestorage, "64gb" %> <%= f.label:devicestorage, "64 GB" %></div>
+										<div class="radbtns"><%= f.radio_button :devicestorage, "128gb" %> <%= f.label:devicestorage, "128 GB" %></div></p>
+
+					<p class="radgrp"><%= f.label:modified, "Has the device been modified in any way. rooted or something? (required)" %>
+					<div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
+					<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></p>
 
 												<%= f.hidden_field :status, :value=>"Pending" %>
 
-												<h3>Upload pictures.</h3>
-
-							<p class="helper-block alert alert-danger">If you upload pictures now, then you'll not be allowed to add more pictures later. But if you don't then you can add pictures by editing the listing. So we say upload them later by editing the same listing.</p>
-													<div class="newPaperclipFiles">
-
-													        <%= f.fields_for :assets do |asset| %>
-
-													           <% if asset.object.new_record? %>
-													                 <p><%= asset.file_field :image, :class=> "" %></p>
-													           <% end %>
-
-													       <% end %>
-
-									
-								 <h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
-					</div>
+											
 								<input type="text" name="foo" style="display: none;">
 
 
