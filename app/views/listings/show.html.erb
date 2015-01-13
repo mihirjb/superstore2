@@ -18,20 +18,21 @@
 			</div>
 		<hr class="green">
 			<div class="row cushion">
-				<div class="col-md-3 col-sm-3 col-xs-6">
-					<%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %>
-					<%= @author.firstname%><br/>
-				</div>
+				
+					<div class="col-md-12 col-sm-12 col-xs-12">
+					
+					<h4><%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %> Listed by <%= @author.firstname%></h4>
+					</div>
 
-				<div class="col-md-3 col-sm-3 col-xs-6">
+				<div class="col-md-4 col-sm-4 col-xs-4">
 					Member Since:<br/><%= @author.created_at.to_date %>
 				</div>
 
-				<div class="col-md-3 col-sm-3 col-xs-6">
+				<div class="col-md-4 col-sm-4 col-xs-4">
 					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
 				</div>
 		
-				<div class="col-md-3 col-sm-3 col-xs-6">
+				<div class="col-md-4 col-sm-4 col-xs-4">
 					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
 				</div>
 			</div>
