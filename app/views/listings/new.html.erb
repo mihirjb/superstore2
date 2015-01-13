@@ -9,35 +9,73 @@
 
 				
 					<%= form_for @listing, :id => "listing-form",  :role => "form", :html => {:class=>"long-form", :multipart => true } do |f| %>
-					
+					<div class="form-group">
+					<p><%= f.label :heading, " Title of your listing" %>
+					<%= f.text_field :heading %></p>
+					<p><%= f.label :description, " Describe your phone a little" %>
+					<%= f.text_field :description %></p>
+					</div>
+					<div class="form-group">
 					<p><%= f.label :devicename, " Name of your phone" %>
-					<%= f.text_field :devicename %></p>
-											<p class="radgrp"><%= f.label:devicecolor, "Color of the device*" %>
-						<div class="radbtns"><%= f.radio_button :devicecolor, "Black" %> <%= f.label:devicecolor, "Black" %></div>
-						<div class="radbtns"><%= f.radio_button :devicecolor, "White" %> <%= f.label:devicecolor, "White" %></div>
-						<div class="radbtns"><%= f.radio_button :devicecolor, "Silver" %> <%= f.label:devicecolor, "Silver" %></div>
-						<div class="radbtns"><%= f.radio_button :devicecolor, "Gray" %> <%= f.label:devicecolor, "Gray"%></div></p>													
-						
-						<p class="radgrp"><%= f.label:devicestorage, "Storage capacity of the device*" %>
-										<div class="radbtns"><%= f.radio_button :devicestorage, "8gb" %> <%= f.label:devicestorage, "8 GB" %></div>
-										<div class="radbtns"><%= f.radio_button :devicestorage, "16gb" %> <%= f.label:devicestorage, "16 GB" %></div>
-										<div class="radbtns"><%= f.radio_button :devicestorage, "32gb" %> <%= f.label:devicestorage, "32 GB" %></div>
-										<div class="radbtns"><%= f.radio_button :devicestorage, "64gb" %> <%= f.label:devicestorage, "64 GB" %></div>
-										<div class="radbtns"><%= f.radio_button :devicestorage, "128gb" %> <%= f.label:devicestorage, "128 GB" %></div></p>
+					<%= f.text_field :devicename, :value=> Phone.find(params[:pid]).modelname, :readonly => true %></p>
+					<p><%= f.label :devicestorage, "Storage capacity" %>
+					<%= f.text_field :devicestorage %></p>
+					<p><%= f.label :devicecolor, " Device Color" %>
+					<%= f.text_field :devicecolor %></p>
+					<p><%= f.label :devicecondtion, " Device Condtion" %>
+					<%= f.text_field :devicecondtion %></p>
+					<p><%= f.label :modified, " Please describe if the device is modified in any way" %>
+					<%= f.text_field :modified %></p>
+					<p><%= f.label :deviceimei, " Imei Number" %>
+					<%= f.text_field :deviceimei %></p>
+					<p><%= f.label :askprice, " Your asking price" %>
+					<%= f.text_field :askprice %></p>
+					</div>
 
-					<p class="radgrp"><%= f.label:modified, "Has the device been modified in any way. rooted or something? (required)" %>
-					<div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
-					<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></p>
+					<div class="form-group">
+					<p><%= f.label :itemlocation, " Where is the item located?" %>
+					<%= f.text_field :itemlocation %></p>
+					<p><%= f.label :shipinternationally, " Will you ship internationally?" %>
+					<%= f.text_field :shipinternationally %></p>
+					<p><%= f.label :shippingdetails, " Details of shipping method and costs etc." %>
+					<%= f.text_field :shippingdetails %></p>
+					<p><%= f.label :returnsallowed, " Will you allow returns?" %>
+					<%= f.text_field :returnsallowed %></p>
+					<p><%= f.label :returnspolicy, " Your returns policy" %>
+					<%= f.text_field :returnspolicy %></p>
+					</div>
 
+					<div class="form-group">
+					<p><%= f.label :paypalfname, " First name in paypal account" %>
+					<%= f.text_field :paypalfname %></p>
+					<p><%= f.label :paypallname, " Last name in paypal account" %>
+					<%= f.text_field :paypallname %></p>
+					<p><%= f.label :paypalemail, " Paypal email address" %>
+					<%= f.text_field :paypalemail %></p>
+					</div>
+
+						<div class="newPaperclipFiles form-group">
+
+						        <%= f.fields_for :assets do |asset| %>
+
+						           <% if asset.object.new_record? %>
+						                 <p><%= asset.file_field :image, :class=> "" %></p>
+						           <% end %>
+
+						       <% end %>
+
+
+				<h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
+				</div>
+					<div class="form-group">
+						<%= f.hidden_field :country, :value=> "Singapore" %>
+						<%= f.hidden_field :phone_id, :value=>params[:pid] %>
 												<%= f.hidden_field :status, :value=>"Pending" %>
-
-											
-								<input type="text" name="foo" style="display: none;">
-
-
-											<hr class="gray">
-												<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
-											<% end %>
+												<input type="text" name="foo" style="display: none;">
+												<hr class="gray">
+					<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
+					</div>
+					<% end %>
 	
 				
 									
