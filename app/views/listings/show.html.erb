@@ -10,11 +10,11 @@
 			<%= image_tag @phone.image.url(:medium)%>
 		
 		</div>
-			<div class="row cushion">
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Phone:<br/><%= @phone.modelname %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Color:<br/><%= @listing.devicecolor %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Memory:<br/><%= @listing.devicestorage %></div>
-				<div class="col-md-3 col-sm-3 col-xs-3 ">Location:<br/><%= @listing.itemlocation %></div>
+			<div class="row cushion bigger-font">
+				<div class="col-md-6 col-sm-6 col-xs-6 ">Phone: <strong><%= @phone.modelname %></strong></div>
+				<div class="col-md-6 col-sm-6 col-xs-6 ">Color: <strong><%= @listing.devicecolor %></strong></div>
+				<div class="col-md-6 col-sm-6 col-xs-6 ">Memory: <strong><%= @listing.devicestorage %></strong></div>
+				<div class="col-md-6 col-sm-6 col-xs-6 ">Location: <strong><%= @listing.itemlocation %></strong></div>
 			</div>
 		<hr class="green">
 			<div class="row cushion">
