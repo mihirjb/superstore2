@@ -10,61 +10,41 @@
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			<%= image_tag @phone.image.url(:medium)%>
 		</div>
-		<div class="col-md-4 col-sm-6 col-xs-12">
+		<div class="col-md-8 col-sm-6 col-xs-12">
 			<div class="row cushion">
-				
 					<div class="col-md-12 col-sm-12 col-xs-12">
-					
-					<h4><%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %> Listed by <%= @author.firstname%></h4>
+					<h4>Listed by <%= @author.firstname%></h4>
 					</div>
 
-				<div class="col-md-4 col-sm-4 col-xs-4">
+				<div class="col-md-6 col-sm-6 col-xs-6">
 					Member Since:<br/><%= @author.created_at.to_date %>
 				</div>
 
-				<div class="col-md-4 col-sm-4 col-xs-4">
+				<div class="col-md-6 col-sm-6 col-xs-6">
 					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
 				</div>
 		
-				<div class="col-md-4 col-sm-4 col-xs-4">
+				<div class="col-md-6 col-sm-6 col-xs-6">
 					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
 				</div>
-			</div>
-		
-		</div>
-		</div>
-			<div class="row cushion bigger-font">
-				<div class="col-md-6 col-sm-6 col-xs-6 ">
-						<div class="row">
-						<div class="col-md-4 col-sm-6 col-xs-6 ">Phone:</div> 
-						<div class="col-md-8 col-sm-6 col-xs-6 "><strong><%= @phone.modelname %></strong></div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					Phone:<br/><strong><%= @phone.modelname %></strong>
+				</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						Color:<br/><strong><%= @listing.devicecolor %></strong>
+					</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							Memory:<br/><strong><%= @listing.devicestorage %></strong>
 						</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 ">
-								<div class="row">
-								<div class="col-md-4 col-sm-6 col-xs-6 ">Color:</div> 
-								<div class="col-md-8 col-sm-6 col-xs-6 "><strong><%= @listing.devicecolor %></strong></div>
-								</div>
-								</div>
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								Location:<br/><strong><%= @listing.itemlocation %></strong>
+							</div>
 				
-								<div class="col-md-6 col-sm-6 col-xs-6 ">
-										<div class="row">
-										<div class="col-md-4 col-sm-6 col-xs-6 ">Memory:</div> 
-										<div class="col-md-8 col-sm-6 col-xs-6 "><strong><%= @listing.devicestorage %></strong></div>
-										</div>
-										</div>
-										<div class="col-md-6 col-sm-6 col-xs-6 ">
-												<div class="row">
-												<div class="col-md-4 col-sm-6 col-xs-6 ">Location:</div> 
-												<div class="col-md-8 col-sm-6 col-xs-6 "><strong><%= @listing.itemlocation %></strong></div>
-												</div>
-												</div>
-								
 			</div>
-		<hr class="green">
 		
-
-	
+		</div>
+		</div>
+		
 		
 		<% if @listing.status == "Approved"%>	
 			<h1><a href="/transactions/initiatetransaction?l=<%=@listing.id%>" class="btn green-sea-flat-button">Buy now - $<%=@listing.askprice.to_i + 20 %></a></h1>
