@@ -6,9 +6,32 @@
 <div class="row">
 <div class="col-md-5">
 	<div class="summary white-color offshadow">
-		<div class="center-image">
+		<div class="center-image row">
+			<div class="col-md-4 col-sm-6 col-xs-12">
 			<%= image_tag @phone.image.url(:medium)%>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="row cushion">
+				
+					<div class="col-md-12 col-sm-12 col-xs-12">
+					
+					<h4><%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %> Listed by <%= @author.firstname%></h4>
+					</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Member Since:<br/><%= @author.created_at.to_date %>
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
+				</div>
 		
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
+				</div>
+			</div>
+		
+		</div>
 		</div>
 			<div class="row cushion bigger-font">
 				<div class="col-md-6 col-sm-6 col-xs-6 ">
@@ -39,25 +62,7 @@
 								
 			</div>
 		<hr class="green">
-			<div class="row cushion">
-				
-					<div class="col-md-12 col-sm-12 col-xs-12">
-					
-					<h4><%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %> Listed by <%= @author.firstname%></h4>
-					</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-4">
-					Member Since:<br/><%= @author.created_at.to_date %>
-				</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-4">
-					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
-				</div>
 		
-				<div class="col-md-4 col-sm-4 col-xs-4">
-					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
-				</div>
-			</div>
 
 	
 		
