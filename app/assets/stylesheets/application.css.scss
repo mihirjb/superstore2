@@ -870,6 +870,10 @@ form.long-form input
 	padding:1em;
 	width:40%;
 }
+form.long-form input[type="radio"]
+{
+	width:2%;
+}
 form.auth-form select, form.long-form select
 {
 	color: #333;
@@ -900,7 +904,7 @@ form.long-form select.input-select
 	box-shadow:none;
 	
 }
-form.auth-form input[type="checkbox"], form.auth-form label
+form.auth-form input[type="checkbox"], form.auth-form label, form.long-form input[type="checkbox"], form.long-form label
 {
 	text-align:left;
 	color:#000;
@@ -928,6 +932,16 @@ form textarea
 	height:6em;
 	width:40%;
 	padding:1.5em 1em;
+}
+div.radgrp
+{
+	overflow:auto;
+}
+form div.radgrp div.radbtns
+{
+	width:20%;
+	float:left;
+	margin:0.5%;
 }
 div.newPaperclipFiles
 {
