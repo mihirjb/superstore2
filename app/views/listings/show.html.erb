@@ -17,21 +17,21 @@
 				<div class="col-md-3 col-sm-3 col-xs-3 ">Location:<br/><%= @listing.itemlocation %></div>
 			</div>
 		<hr class="green">
-			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-12">
+			<div class="row cushion">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					<%= image_tag @profile.avatar.url(:mini), :class => "owner-image img-circle" unless @profile.nil? %>
 					<%= @author.firstname%><br/>
 				</div>
 
-				<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					Member Since:<br/><%= @author.created_at.to_date %>
 				</div>
 
-				<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
 				</div>
 		
-				<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-3 col-xs-6">
 					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
 				</div>
 			</div>
