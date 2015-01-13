@@ -25,7 +25,9 @@
 				</div>
 		
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					Reviews:<br/> 55 <span class="glyphicon glyphicon-thumbs-up"></span>
+					Reviews:<br/> 
+					<span class="upvote"><%= Vote.where('voteable_id =? AND vote =?', @profile.id, true).count %></span> <span class="glyphicon glyphicon-thumbs-up"></span>
+					<span class="downvote"><%= Vote.where('voteable_id =? AND vote =?', @profile.id, false).count %> </span><span class="glyphicon glyphicon-thumbs-down gray"></span>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
 					Phone:<br/><strong><%= @phone.modelname %></strong>
