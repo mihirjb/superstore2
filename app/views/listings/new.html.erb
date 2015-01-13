@@ -59,7 +59,7 @@
 						        <%= f.fields_for :assets do |asset| %>
 
 						           <% if asset.object.new_record? %>
-						                 <p><%= asset.file_field :image, :class=> "" %></p>
+						                 <p><%= asset.file_field :image, :class=> "custom-file-input" %></p>
 						           <% end %>
 
 						       <% end %>
