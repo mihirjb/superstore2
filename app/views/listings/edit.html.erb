@@ -2,163 +2,82 @@
 
 <section class="long-form-section">
 	<div class="header silver-color offshadow">
-		<h1 class="page-title">All iPads</h1>
+		<h1 class="page-title auth-form-heading">Edit your listing</h1>
+		<p class="sub">Edit your listing</p>
 </div>
-<div class="container">
-	<div class="row">
-	
-			<%= form_for @listing, :class=>"new_listing long-form", :id => "listing-form",  :role => "form", :html => { :multipart => true } do |f| %>
-			<p><%=f.label:devicename, "Name of your Phone" %>	<%= f.text_field :devicename, :class=> "required", :placeholder=>"Name of your Phone" %></p>
-			<%=f.label:devicestorage, "Storage capacity" %>	<div class="btn-group"  data-toggle="buttons">
-			  <label class="btn clouds-flat-button active">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> 8 GB
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> 16 GB
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> 32 GB
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option4" autocomplete="off"> 64 GB
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option5" autocomplete="off"> 128 GB
-			  </label>
-			</div>
-			<p></p>
-			<%=f.label:devicecolor, "Color of your phone" %>
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn clouds-flat-button active">
-			    <input type="radio" name="options" id="option1" autocomplete="off" checked> Black
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option2" autocomplete="off"> White
-			  </label>
-			  <label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option3" autocomplete="off"> Gray
-			  </label>
-			<label class="btn clouds-flat-button">
-			    <input type="radio" name="options" id="option4" autocomplete="off"> Gold
-			  </label>
-			<div class="select select-large btn clouds-flat-button">
-			    <select class="btn clouds-flat-button">
-			      <option disabled="" selected="">Other</option>
-			        <option data-icon-class="icon-star-alt" data-name="Loft" data-type-id="35">
-			          Loft
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Cabin" data-type-id="4">
-			          Cabin
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Villa" data-type-id="11">
-			          Villa
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Castle" data-type-id="5">
-			          Castle
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Dorm" data-type-id="9">
-			          Dorm
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Treehouse" data-type-id="6">
-			          Treehouse
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Boat" data-type-id="8">
-			          Boat
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Plane" data-type-id="28">
-			          Plane
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Camper/RV" data-type-id="32">
-			          Camper/RV
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Igloo" data-type-id="12">
-			          Igloo
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Lighthouse" data-type-id="10">
-			          Lighthouse
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Yurt" data-type-id="15">
-			          Yurt
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Tipi" data-type-id="16">
-			          Tipi
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Cave" data-type-id="18">
-			          Cave
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Island" data-type-id="19">
-			          Island
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Chalet" data-type-id="22">
-			          Chalet
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Earth House" data-type-id="23">
-			          Earth House
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Hut" data-type-id="24">
-			          Hut
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Train" data-type-id="25">
-			          Train
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Tent" data-type-id="34">
-			          Tent
-			        </option>
-			        <option data-icon-class="icon-star-alt" data-name="Other" data-type-id="33">
-			          Other
-			        </option>
-			    </select>
-			  </div>
-			</div>
+<div class="container">	
 
+				
+					<%= form_for @listing, :id => "listing-form",  :role => "form", :html => {:class=>"long-form", :multipart => true } do |f| %>
+					<div class="form-group">
+					<p><%= f.label :headline, " Title of your listing" %>
+					<%= f.text_field :headline %></p>
+					<p><%= f.label :description, " Describe your phone a little" %>
+					<%= f.text_field :description %></p>
+					</div>
+					<div class="form-group">
+					<p><%= f.label :devicestorage, "Storage capacity" %>
+					<%= f.text_field :devicestorage %></p>
+					<p><%= f.label :devicecolor, " Device Color" %>
+					<%= f.text_field :devicecolor %></p>
+					<p><%= f.label :devicecondition, " Device Condition" %>
+					<%= f.text_field :devicecondition %></p>
+					<p><%= f.label :modified, " Please describe if the device is modified in any way" %>
+					<%= f.text_field :modified %></p>
+					<p><%= f.label :deviceimei, " Imei Number" %>
+					<%= f.text_field :deviceimei %></p>
+					<p><%= f.label :askprice, " Your asking price" %>
+					<%= f.text_field :askprice %></p>
+					</div>
 
-			<p><%=f.label:devicecondition, "Condition of the device" %>	<%= f.text_field :devicecondition, :class=> "required", :placeholder=>"ex: mint, good, fair, new, new-retail" %></p>
-			<p><%=f.label:askprice, "How much you want to sell it for?" %>	<%= f.text_field :askprice, :class=> "required", :placeholder=>"amount in SGD" %></p>
+					<div class="form-group">
+					<p><%= f.label :itemlocation, " Where is the item located?" %>
+					<%= f.text_field :itemlocation %></p>
+					<p><%= f.label :shipinternationally, " Will you ship internationally?" %>
+					<%= f.text_field :shipinternationally %></p>
+					<p><%= f.label :shippingdetails, " Details of shipping method and costs etc." %>
+					<%= f.text_field :shippingdetails %></p>
+					<p><%= f.label :returnsallowed, " Will you allow returns?" %>
+					<%= f.text_field :returnsallowed %></p>
+					<p><%= f.label :returnspolicy, " Your returns policy" %>
+					<%= f.text_field :returnspolicy %></p>
+					</div>
 
-			<hr class="gray">
-
-			<hr class="gray">
-
-				<p><%=f.label:headline, "Title for your listing" %>	<%= f.text_field :headline, :class=> "required", :placeholder=>"this will appear in our search results, so be creative it's your chance to sell." %></p>
-					<p><%=f.label:description, "Describe your listing" %>	<%= f.text_area :description, :class=> "required", :placeholder=>"Write more about your phone, which will let the buyer make a decision" %></p>
-
+					<div class="form-group">
+					<p><%= f.label :paypalfname, " First name in paypal account" %>
+					<%= f.text_field :paypalfname %></p>
+					<p><%= f.label :paypallname, " Last name in paypal account" %>
+					<%= f.text_field :paypallname %></p>
+					<p><%= f.label :paypalemail, " Paypal email address" %>
+					<%= f.text_field :paypalemail %></p>
+					</div>
 					<hr class="gray">
 
-			<hr class="gray">
-				<p><%=f.label:deviceimei, "Phone's IMEI number" %>	<%= f.text_field :deviceimei, :class=> "required", :placeholder=>"IMEI needed for verification. Will be kept private" %></p>
+						<div class="newPaperclipFiles form-group">
 
-					<p><%=f.label:paypalemail, "Your paypal email" %>	<%= f.text_field :paypalemail, :class=> "required", :value=>"#{current_user.email}" %></p>
+						        <%= f.fields_for :assets do |asset| %>
 
-						<p><%=f.label:paypalfname, "First name in paypal" %>	<%= f.text_field :paypalfname, :class=> "required", :placeholder=>"Paypal first name is needed for verification" %></p>
+						           <% if asset.object.new_record? %>
+						                 <p><%= asset.file_field :image, :class=> "custom-file-input" %></p>
+						           <% end %>
 
+						       <% end %>
 
-							<p><%=f.label:paypallaname, "Last name in paypal" %>	<%= f.text_field :paypallname, :class=> "required", :placeholder=>"Last name in paypal is collected for verification." %></p>
-
-			<hr class="gray">
-
-
-											<div class="newPaperclipFiles">
-
-											        <%= f.fields_for :assets do |asset| %>
-
-											           <% if asset.object.new_record? %>
-											                 <p><%= asset.file_field :image, :class=> "custom-file-input" %></p>
-											           <% end %>
-
-											       <% end %>
-
-
-			</div>
-						<input type="text" name="foo" style="display: none;">
-
-
-										<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
-									<% end %>
-	</div>
-		</div>
+				</div>
+				
+					<div class="form-group">
+						<hr class="gray">
+						<h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
+						<%= f.hidden_field :country, :value=> "Singapore" %>
+						<%= f.hidden_field :phone_id, :value=>params[:pid] %>
+												<%= f.hidden_field :status, :value=>"Pending" %>
+												<input type="text" name="foo" style="display: none;">
+					<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success offshadow" %>
+					</div>
+					<% end %>
+	
+				
+									
 	</div>
 </section>
 
-	
-
-		
