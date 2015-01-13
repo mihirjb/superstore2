@@ -11,10 +11,32 @@
 		
 		</div>
 			<div class="row cushion bigger-font">
-				<div class="col-md-6 col-sm-6 col-xs-6 ">Phone: <strong><%= @phone.modelname %></strong></div>
-				<div class="col-md-6 col-sm-6 col-xs-6 ">Color: <strong><%= @listing.devicecolor %></strong></div>
-				<div class="col-md-6 col-sm-6 col-xs-6 ">Memory: <strong><%= @listing.devicestorage %></strong></div>
-				<div class="col-md-6 col-sm-6 col-xs-6 ">Location: <strong><%= @listing.itemlocation %></strong></div>
+				<div class="col-md-6 col-sm-6 col-xs-6 ">
+						<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6 ">Phone:</div> 
+						<div class="col-md-6 col-sm-6 col-xs-6 "><strong><%= @phone.modelname %></strong></div>
+						</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 ">
+								<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6 ">Color:</div> 
+								<div class="col-md-6 col-sm-6 col-xs-6 "><strong><%= @listing.devicecolor %></strong></div>
+								</div>
+								</div>
+				
+								<div class="col-md-6 col-sm-6 col-xs-6 ">
+										<div class="row">
+										<div class="col-md-6 col-sm-6 col-xs-6 ">Memory:</div> 
+										<div class="col-md-6 col-sm-6 col-xs-6 "><strong><%= @listing.devicestorage %></strong></div>
+										</div>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-6 ">
+												<div class="row">
+												<div class="col-md-6 col-sm-6 col-xs-6 ">Location:</div> 
+												<div class="col-md-6 col-sm-6 col-xs-6 "><strong><%= @listing.itemlocation %></strong></div>
+												</div>
+												</div>
+								
 			</div>
 		<hr class="green">
 			<div class="row cushion">
