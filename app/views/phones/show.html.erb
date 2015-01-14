@@ -8,12 +8,18 @@
 		</div>
 	</div>
 <div class="container white-color softshadow">
+	<% if @listings.nil? %>
+	<div class="cushion">
+	<h1 class="">Sorry no results found for <%= @phone.modelname %></h1>
+	<a class="btn orange-flat-button" href="/listings/new?pid=<%= @phone.id %>">Sell <%= @phone.modelname %></a>
+	<% else %>
 		<% cache @listings do%>
 		<%= render partial: 'phones/listings' %>
 		<% end %>
 		<div class="cushion">
 		<%= will_paginate @listings, renderer: BootstrapPagination::Rails  %>
 		</div>
+		<% end %>
 
 </div>
 </section>
