@@ -975,7 +975,11 @@ div.custom-message form input[type="submit"]
 	font-size:1.2em;
 }
 
-
+form input.small-input-file
+{
+	width:40%;
+	margin:0 auto;
+}
 
 form.search 
 {
