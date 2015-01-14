@@ -26,8 +26,8 @@ class PagesController < ApplicationController
     
     @user = current_user
      @listings = Listing.where('user_id = ?',@user.id).limit(50)
-     @profile = Profile.find_by_user_id(@user.id)
-     @feedbacks = Review.where('profile_id = ?',@profile.id).limit(50)
+     @profile = Profile.where('user_id = ?',current_user.id).first     
+    @feedbacks = Review.where('profile_id = ?',@profile.id).limit(50)
      @orders = Order.where('seller_id = ? OR user_id = ?', @user.id,@user.id).limit(50)
      @review = @profile.reviews.build
      

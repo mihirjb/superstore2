@@ -457,7 +457,11 @@ section {
 	background-color:#f8e4bf;
 	color:#333;
 }
-
+.dark-blue-color
+{
+	background-color:#575f72;
+	color:#ccc;
+}
 .white-outline
 {
 	border:1px solid #f5f5f5;
@@ -718,6 +722,19 @@ div.mini-info
 div.listing-detail
 {
 	margin-bottom:10px;
+}
+div.dark-blue-color h4
+{
+	background-color:#4c5363;	
+	padding:10px 15px;
+}
+div.dark-blue-color a
+{
+	color:#fff;
+}
+div.dark-blue-color a:hover
+{
+background-color:#4c5363;	
 }
 div.single-listing 
 {
