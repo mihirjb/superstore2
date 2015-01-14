@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   
   before_filter :authenticate_user!, :only => [:dashboard]
   layout "home", only: [:home]
-  caches_page :alliphones, :allipads, :help, :about, :thanksandshare, :faq, :sellerfaq, :buyerfaq, :terms
+  caches_page :alliphones, :allipads, :help, :about, :faq, :sellerfaq, :buyerfaq, :terms
  
   
   def home
