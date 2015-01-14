@@ -20,18 +20,19 @@ class ProfilesController < ApplicationController
 
    def show
      @profile = Profile.find(params[:id])
-     @listings = Listing.find_all_by_user_id(@profile.user_id, :limit => 50)
-     @feedbacks = Review.find_all_by_profile_id(@profile.id, :limit => 50)
+     @user = User.find(@profile.id)
+     @listings = Listing.where('user_id = ?',@profile.user_id).limit(50)
+     @feedbacks = Review.where('profile_id = ?',@profile.user_id).limit(50)
      @review = @profile.reviews.build
    end
 
    def edit
-     @profile = Profile.find_by_user_id(current_user.id)
+     @profile = Profile.where('user_id = ?',current_user.id).first
    end
 
    def update
     
-     @profile = Profile.find_by_user_id(current_user.id)
+     @profile = Profile.where('user_id = ?',current_user.id).first
       if @profile.update(profile_params())
          redirect_to dashboard_url, :notice => "Congratulations, profile updated Successfully."
        else

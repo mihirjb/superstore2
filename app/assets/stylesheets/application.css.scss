@@ -131,6 +131,10 @@ div.share-btn
 {
 	color: #16a085;
 }
+.red
+{
+	color: #e54c47;
+}
 div.features
 {
 	width:45%;
@@ -538,7 +542,11 @@ p.sub
 }
 
 
-
+ul.review-list li
+{
+	padding:10px;
+	border-bottom:1px solid #e1e1e7;
+}
 
 div.owner-details
 {
@@ -795,7 +803,7 @@ div.center-image img
 img.owner-image
 {
 	height:40px;
-	margin:5px 0px 0px; 
+	margin:5px 10px 0px; 
 	padding:0;
 }
 div.listing-images
