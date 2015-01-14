@@ -51,8 +51,18 @@
 						<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></div></div>
 					<p><%= f.label :deviceimei, " Imei Number" %>
 					<%= f.text_field :deviceimei %></p>
+						<p><%=f.label:devicecarrier, "Service Provider" %>
+
+						<%= f.select :devicecarrier , [['Unlocked','Unlocked'], ['SingTel','SingTel'], ['Starhub','Starhub'], ['M1','M1'], ['Others','Others']],  :autofocus => true%>
+						</p>
+						
 					<p><%= f.label :askprice, " Your asking price" %>
 					<%= f.text_field :askprice %></p>
+					
+					<p><%= f.label :moddetails, " Describe any modifications that you have done." %><%= f.text_area :moddetails,  :placeholder=>"Describe your modification if you have modified the device in any way." %></p>
+
+					<p><%= f.label :accessories, " Accessories" %><%= f.text_field :accessories, :class=> " required", :placeholder=>"List of accessories with the phone*" %></p>
+					
 					</div>
 
 					<div class="form-group">
@@ -72,8 +82,8 @@
 					<div class="radgrp"><%= f.label :returnsallowed, " Will you allow returns?" %>
 						<div class="btn-group"><div class="radbtns"><%= f.radio_button :returnsallowed, :true %> <%= f.label:returnsallowed, " Yes" %></div>
 						<div class="radbtns"><%= f.radio_button :returnsallowed, :false %> <%= f.label:returnsallowed, " No" %></div></div></div>
-					<p><%= f.label :returnspolicy, " Your returns policy" %>
-					<%= f.text_field :returnspolicy %></p>
+					<p><%= f.label :returnpolicy, " Your returns policy" %>
+					<%= f.text_field :returnpolicy %></p>
 					</div>
 
 					<div class="form-group">
