@@ -1,7 +1,6 @@
 class ListingsController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:show]
-  allow_oauth! :except => :delete
   impressionist :actions=>[:show]
   layout "forms", :only => [:new, :edit]
   
