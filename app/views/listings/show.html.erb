@@ -21,7 +21,7 @@
 				</div>
 
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					Last seen on:<br/><%= @author.last_sign_in_at.to_date%>
+					Last seen on:<br/><%= time_ago_in_words(@author.last_sign_in_at) %> ago
 				</div>
 		
 				<div class="col-md-6 col-sm-6 col-xs-6">
