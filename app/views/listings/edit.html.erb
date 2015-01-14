@@ -82,9 +82,7 @@
 				
 					<div class="form-group">
 						<h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
-						<%= f.hidden_field :country, :value=> "Singapore" %>
-						<%= f.hidden_field :phone_id, :value=>params[:pid] %>
-												<%= f.hidden_field :status, :value=>"Pending" %>
+						
 												<input type="text" name="foo" style="display: none;">
 												<hr class="gray">
 					<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
