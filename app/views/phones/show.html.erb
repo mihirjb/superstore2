@@ -8,7 +8,7 @@
 		</div>
 	</div>
 <div class="container white-color softshadow">
-	<% if @listings.nil? %>
+	<% if @listings.blank? %>
 	<div class="cushion">
 	<h1 class="">Sorry no results found for <%= @phone.modelname %></h1>
 	<a class="btn orange-flat-button" href="/listings/new?pid=<%= @phone.id %>">Sell <%= @phone.modelname %></a>
