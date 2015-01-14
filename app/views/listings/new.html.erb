@@ -9,6 +9,17 @@
 
 				
 					<%= form_for @listing, :id => "listing-form",  :role => "form", :html => {:class=>"long-form", :multipart => true } do |f| %>
+					
+						<% if @listing.errors.full_messages.any? %>
+						<div id="error_explanation">
+						<h2>Please rectify the following errors</h2>
+						<ul>
+						<% @listing.errors.full_messages.each do |error_message| %>
+						<li><%= error_message %></li>
+						<% end %>
+						</div>
+						<% end %>
+					
 					<div class="form-group offshadow">
 					<p><%= f.label :headline, " Title of your listing" %>
 					<%= f.text_field :headline %></p>
