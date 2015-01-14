@@ -20,12 +20,12 @@
 						</div>
 						<% end %>
 						
-					<div class="form-group offshadow">
+					<div class="form-group">
 					<p><%= f.label :headline, " Title of your listing" %>
 					<%= f.text_field :headline %></p>
 				
 					</div>
-					<div class="form-group offshadow">
+					<div class="form-group">
 				
 		
 					<p><%= f.label :askprice, " Your asking price" %>
@@ -34,7 +34,7 @@
 
 			
 
-					<div class="form-group offshadow">
+					<div class="form-group">
 					<p><%= f.label :paypalfname, " First name in paypal account" %>
 					<%= f.text_field :paypalfname %></p>
 					<p><%= f.label :paypallname, " Last name in paypal account" %>
@@ -44,7 +44,7 @@
 					</div>
 					<hr class="gray">
 
-						<div class="newPaperclipFiles form-group offshadow">
+						<div class="newPaperclipFiles form-group">
 
 						     	<% if @listing.assets.exists? %>
 								<h3>Existing images.</h3>
@@ -66,13 +66,11 @@
 
 				</div>
 				
-					<div class="form-group">
 						<h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
 						
 												<input type="text" name="foo" style="display: none;">
 												<hr class="gray">
 					<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
-					</div>
 					<% end %>
 	
 				
