@@ -1,10 +1,13 @@
-<section>
-	<div class="wrapper">
-		
-		<%= form_for @profile, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
+<section class="long-form-section">
+	<div class="header silver-color offshadow">
+		<h1 class="page-title auth-form-heading">Create your profile</h1>
+		<p class="sub">Fill in most details so people can learn more about you</p>
+</div>
+<div class="container">	
+
+		<%= form_for @profile, :role => "form", :html => {:class=>"long-form", :multipart => true } do |f| %>
 		
 			<div class="form-group">
-			<div class="input-group-lg">
 				<h3>Data about you</h3>
 				<%= f.label :avatar, "Upload your Profile picture" %><%= f.file_field :avatar %><br/>
 			  
@@ -12,22 +15,18 @@
 
 			<%= f.text_field :paypalemail, :class=> "form-control", :placeholder=>"Your Paypal email address" %>
 			</div>
-			</div>
 	
 			
 			<div class="form-group">
-			<div class="input-group-lg">
-			<h3>More info about you, visible to puplic</h3>
+			<h3>More info about you, visible to public</h3>
 			<%= f.text_field :displayname, :class=> "form-control", :placeholder=>"Display Name" %>			
 			<%= f.text_area :aboutme, :class=> "form-control", :placeholder=>"About yourself" %>
 			<span class="helper-block">Will be kept private</span>
 			<%= f.text_field :twitterhandle, :class=> "form-control", :placeholder=>"Twitter username" %>
 			<%= f.text_field :websiteurl, :class=> "form-control", :placeholder=>"Your website address" %>
 			</div>
-			</div>
 			
 			<div class="form-group">
-			<div class="input-group-lg">
 			<h3>Shipping Details</h3>
 			<%= f.text_field :country, :class=> "form-control", :placeholder=>"Country you live in" %>
 			<%= f.text_field :timezone, :class=> "form-control", :placeholder=>"Your timezone" %>
@@ -35,12 +34,9 @@
 			<%= f.text_field :address, :class=> "form-control", :placeholder=>"Shipping address in full." %>
 			<%= f.text_field :phone, :class=> "form-control", :placeholder=>"Your phone number" %>
 			
-		</div>  
 		</div>
 
-		<div class="form-group">
 		<%= f.submit "Add", :disable_with => 'Going...', :class =>"btn btn-success btn-lg btn-block" %>
 		<% end %>
-		
-	</div>
+</div>		
 </section>
