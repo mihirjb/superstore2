@@ -6,7 +6,7 @@ class BuyerMailer < ActionMailer::Base
     @order = order
      @buyer = Profile.find_by_user_id(buyer.id)
      @seller = Profile.find_by_user_id(seller.user_id)
-      mail(:to => "#{buyer.email}", :subject => "Recipt for your order from Zalpe")
+      mail(:to => "#{buyer.email}", :subject => "Recipt for your order from Phonesalad")
   end
   
   def shipping_confirmation(order,trackcode)
@@ -14,7 +14,7 @@ class BuyerMailer < ActionMailer::Base
      @trackcode = trackcode
       @buyerprofile = Profile.find_by_user_id(order.user_id)
       @buyer = User.find(order.user_id)
-       mail(:to => "#{@buyer.email}", :subject => "Recipt for your order from Zalpe")
+       mail(:to => "#{@buyer.email}", :subject => "Recipt for your order from Phonesalad")
    end
   
 end

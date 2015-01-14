@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
      @order = order
      @buyer = Profile.find_by_user_id(buyer.id)
      @seller = Profile.find_by_user_id(seller.user_id)
-     mail(:to => "#{seller.paypalemail}", :subject => "Order placed on Zalpe")
+     mail(:to => "#{seller.paypalemail}", :subject => "Order placed on Phonesalad")
    end
    
    def listing_confirmation(listing)
