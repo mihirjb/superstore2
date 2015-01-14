@@ -10,7 +10,7 @@
 	<div class="row">
 	<div class="col-md-6">
 		<div class="center-image">
-		<img alt="Iphone4" src="http://zalpe.s3.amazonaws.com/phones/images/000/000/017/medium/ipad3.png?1418981757" />
+			<%= image_tag Phone.where(@listing.phone_id).first.image.url(:medium)%>
 		</div>
 		<h3><%= @listing.devicename %> | <%= @listing.devicecolor %> | <%= @listing.devicestorage %> | <%= @listing.devicecondition %></h3>
 		<p><%= @listing.description %>
