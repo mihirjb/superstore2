@@ -18,15 +18,26 @@
 					<div class="form-group">
 					<p><%= f.label :devicename, " Name of your phone" %>
 					<%= f.text_field :devicename, :value=> Phone.find(params[:pid]).modelname, :readonly => true %></p>
-					<p><%= f.label :devicestorage, "Storage capacity" %>
-					<%= f.text_field :devicestorage %></p>
+					<div class="radgrp"><%= f.label :devicestorage, " How much internal memory does your device have?" %>
+						<div class="btn-group">
+						<div class="radbtns"><%= f.radio_button :devicestorage, "8 GB" %> <%= f.label:devicestorage, "8 GB" %></div>
+						<div class="radbtns"><%= f.radio_button :devicestorage, "16 GB" %> <%= f.label:devicestorage, "16 GB" %></div>
+						<div class="radbtns"><%= f.radio_button :devicestorage, "32 GB" %> <%= f.label:devicestorage, "32 GB" %></div>
+						<div class="radbtns"><%= f.radio_button :devicestorage, "64 GB" %> <%= f.label:devicestorage, "64 GB" %></div>
+						<div class="radbtns"><%= f.radio_button :devicestorage, "128 GB" %> <%= f.label:devicestorage, "128 GB" %></div>
+						</div>
+						</div>
+				
+				
+				
+				
 					<p><%= f.label :devicecolor, " Device Color" %>
 					<%= f.text_field :devicecolor %></p>
 					<p><%= f.label :devicecondition, " Device Condition" %>
 					<%= f.text_field :devicecondition %></p>
-					<p><%= f.label :modified, " Please describe if the device is modified in any way" %>
-						<div class="radgrp"><div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
-						<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></div></p>
+					<div class="radgrp"><%= f.label :modified, " Has the phone been modified in any way?" %>
+						<div class="btn-group"><div class="radbtns"><%= f.radio_button :modified, :true %> <%= f.label:modified, " Yes" %></div>
+						<div class="radbtns"><%= f.radio_button :modified, :false %> <%= f.label:modified, " No" %></div></div></div>
 					<p><%= f.label :deviceimei, " Imei Number" %>
 					<%= f.text_field :deviceimei %></p>
 					<p><%= f.label :askprice, " Your asking price" %>
@@ -36,12 +47,14 @@
 					<div class="form-group">
 					<p><%= f.label :itemlocation, " Where is the item located?" %>
 					<%= f.text_field :itemlocation %></p>
-					<p><%= f.label :shipinternationally, " Will you ship internationally?" %>
-					<%= f.text_field :shipinternationally %></p>
+						<div class="radgrp"><%= f.label :shipinternationally, " Will you ship internationally?" %>
+							<div class="btn-group"><div class="radbtns"><%= f.radio_button :shipinternationally, :true %> <%= f.label:shipinternationally, " Yes" %></div>
+							<div class="radbtns"><%= f.radio_button :shipinternationally, :false %> <%= f.label:shipinternationally, " No" %></div></div></div>
 					<p><%= f.label :shippingdetails, " Details of shipping method and costs etc." %>
 					<%= f.text_field :shippingdetails %></p>
-					<p><%= f.label :returnsallowed, " Will you allow returns?" %>
-					<%= f.text_field :returnsallowed %></p>
+					<div class="radgrp"><%= f.label :returnsallowed, " Will you allow returns?" %>
+						<div class="btn-group"><div class="radbtns"><%= f.radio_button :returnsallowed, :true %> <%= f.label:returnsallowed, " Yes" %></div>
+						<div class="radbtns"><%= f.radio_button :returnsallowed, :false %> <%= f.label:returnsallowed, " No" %></div></div></div>
 					<p><%= f.label :returnspolicy, " Your returns policy" %>
 					<%= f.text_field :returnspolicy %></p>
 					</div>
