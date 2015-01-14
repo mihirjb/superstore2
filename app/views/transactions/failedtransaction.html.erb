@@ -19,8 +19,7 @@
 		<br/>
 		Quantity: <strong>1</strong>
 		<br/>
-		Seller: <a href="/profile/<%= Profile.where('user_id = ?',@listing.user_id).first.id %>"><%= User.find(@listing.id).firstname%></a>
-		</p>
+Seller: <a href="/profile/<%= Profile.where('user_id = ?',@listing.user_id).first.id %>"><%= User.find(@listing.user_id).firstname%></a>		</p>
 		<hr class="gray">
 		<p class="buy-btn">Total: $<%= @listing.askprice.to_i + 20 %></p>
 	</div>
