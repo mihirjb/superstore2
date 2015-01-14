@@ -1039,7 +1039,19 @@ span.twitter-typeahead,span.twitter-typeahead input,input.tt-hint
 	width:84%;
 	background-color:#fff;
 }
-
+body section form label.error, body section div.radgrp div.radbtns label.error
+{
+	width:100%;
+	text-align:center;
+	margin:20px 0px;
+	color:#f00;
+	clear:both;
+}
+body#forms form.auth-form label.error
+{
+	color:#fff;
+	text-align:left;
+}
 /************typeahead styles***********/
 
 .twitter-typeahead .tt-query,
@@ -1132,7 +1144,6 @@ div#footer
 	text-align:center;
 	color:#fcfcfc;
 	background: #000;
-	border: 1px solid #404040;
 	overflow:auto;
 }
 div#footer ul.footer-links 
