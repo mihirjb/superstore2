@@ -58,6 +58,12 @@
 					<div class="form-group">
 					<p><%= f.label :itemlocation, " Where is the item located?" %>
 					<%= f.text_field :itemlocation %></p>
+						<div class="radgrp"><%= f.label :deliveryby, " Will you ship internationally?" %>
+							<div class="btn-group"><div class="radbtns"><%= f.radio_button :deliveryby, "courier" %> <%= f.label:deliveryby, " Courier/Mail" %></div>
+							<div class="radbtns"><%= f.radio_button :deliveryby, "pickup" %> <%= f.label:deliveryby, " Meetup" %></div></div></div>
+								<p><%= f.label :pickupaddress, " Place where you would like to meet the buyer" %>
+								<%= f.text_field :pickupaddress %></p>
+					
 						<div class="radgrp"><%= f.label :shipinternationally, " Will you ship internationally?" %>
 							<div class="btn-group"><div class="radbtns"><%= f.radio_button :shipinternationally, :true %> <%= f.label:shipinternationally, " Yes" %></div>
 							<div class="radbtns"><%= f.radio_button :shipinternationally, :false %> <%= f.label:shipinternationally, " No" %></div></div></div>
@@ -80,7 +86,7 @@
 					</div>
 					<hr class="gray">
 
-						<div class="newPaperclipFiles form-group">
+						<div class="newPaperclipFiles">
 
 						        <%= f.fields_for :assets do |asset| %>
 

@@ -34,6 +34,10 @@
 #  accounttype         :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
+#  devicecondition     :string(255)
+#  deliveryby          :string(255)
+#  pickupaddress       :string(255)
+#  returnpolicy        :string(255)
 #
 
 class Listing < ActiveRecord::Base

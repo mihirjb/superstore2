@@ -13,7 +13,6 @@
 #  aboutme             :string(255)
 #  twitterhandle       :string(255)
 #  websiteurl          :string(255)
-#  user_id             :string(255)
 #  address             :string(255)
 #  phone               :string(255)
 #  created_at          :datetime
@@ -22,6 +21,7 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  user_id             :integer
 #
 
 class Profile < ActiveRecord::Base
