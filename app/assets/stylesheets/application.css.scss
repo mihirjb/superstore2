@@ -466,6 +466,10 @@ section {
 {
 	border:1px dashed #B20000;
 }
+.half-width
+{
+	width:50%;
+}
 section.full-height
 {
 	min-height: auto;
@@ -1285,6 +1289,12 @@ div.btn-group .btn
 	padding:10px;
 	border:1px solid #ccc;
 }
+
+form div.radgrp div.half-width
+{
+	width:50%;
+}
+
 .buy-btn
 {
 	font-size:1.5em;
@@ -1850,6 +1860,8 @@ input[type="text"], input[type="email"]   { width: 60%;
 	margin: 0px auto;
 
  }
+
+
 div.pane
 {
 	width:75%;
@@ -1861,7 +1873,16 @@ div.main
 
 form
 {
-	margin:30px 12px;
+	width:100%;
+	margin:30px 2px;
+}
+form label, form.long-form label
+{
+	width:65%;
+}
+form input,form.long-form input,form.long-form select, form.long-form textarea, form.auth-form input[type="text"], form.auth-form input[type="email"], form.auth-form input[type="password"], form.auth-form select
+{
+	width:65%;
 }
 div.features
 {
@@ -1876,7 +1897,16 @@ div.features
 	 }
 	form
 	{
+		width:100%;
 		margin:30px 2px;
+	}
+	form label, form.long-form label
+	{
+		width:85%;
+	}
+	form input,form.long-form input, form.long-form textarea,form.long-form select, form.auth-form input[type="text"], form.auth-form input[type="email"], form.auth-form input[type="password"], form.auth-form select
+	{
+		width:85%;
 	}
 	div.features
 	{
