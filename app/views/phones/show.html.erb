@@ -16,7 +16,7 @@
 	<div class="cushion">
 		<h1>Maybe you'll like these popular listings</h1>
 		<div class="row">
-		<% @popularlistings = Listing.all.order(impressions_count DESC).limit(6) %>
+		<% @popularlistings = Listing.all.order("impressions_count DESC").limit(6) %>
 		<% @popularlistings.each do |l| %>
 		<%= image_tag Phone.find(l.phone_id).image.url(:thumb) %>
 		<div class="col-md-4 col-sm-4 col-xs-12 grid-list-item">
