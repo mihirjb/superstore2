@@ -23,7 +23,7 @@
 		<div class="col-md-4 col-sm-4 col-xs-12 grid-list-item">
 			<%= image_tag Phone.find(l.phone_id).image.url(:thumb) %>
 		<h4><%= l.devicename %> | <%= l.devicecolor %> <%= l.devicestorage %> | <%= l.devicestorage %></h4>
-		<a class="btn graphite-flat-button btn-sm" href="/listings/<%= l.id %>">Buy</a>
+		<a class="btn graphite-flat-button" href="/listings/<%= l.id %>">Buy</a>
 		</div>
 		<% end %>
 		</div>
