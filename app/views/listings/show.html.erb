@@ -192,7 +192,6 @@
 		<%= render partial: 'listings/comments' %>
 		<% end %>	
 <hr class="gray">
-<h4> Add a new Comment</h4>
 
 		<div class="comment-form">
 			<% if user_signed_in? %>
@@ -200,8 +199,10 @@
 				<%= form_for @comment, :class=>"form-horizontal",  :role => "form", :html => { :multipart => true } do |f| %>
 			
 		<div class="form-group">
+			<h4> Add a new Comment</h4>
+			<br/>
 			<%= f.text_area :commentbody, :class=> "form-control", :placeholder=>"Write something here" %>
-			<br/><br/>
+			<br/>
 		<%= f.label :picture, "Upload any additional picture" %><%= f.file_field :picture %>
 		<%= f.hidden_field :listing_id, :value => @listing.id %>
 		<%= f.hidden_field :user_id, :value => current_user.id %>
