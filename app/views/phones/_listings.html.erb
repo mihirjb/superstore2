@@ -1,5 +1,5 @@
 <% @listings.each do |l| %>
-	
+<a href="/listings/<%=l.id %>">	
 <div class="single-listing">
 <div class="row">
 	<div class="col-md-1">
@@ -16,4 +16,5 @@
 	<div class="col-md-12 col-sm-12 col-xs-12 "><%= @phone.modelname %> | <%= l.devicecolor %> | <%= l.devicestorage %> | <%= l.devicecondition %> | <%= l.itemlocation %> | Accessories: <%= l.accessories %></div>
 </div>
 </div>
+</a>
 <% end %>
