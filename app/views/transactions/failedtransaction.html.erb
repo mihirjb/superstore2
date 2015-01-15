@@ -8,7 +8,7 @@
 	<div class="row">
 	<div class="col-md-6">
 		<div class="center-image">
-			<%= image_tag Phone.where(@listing.phone_id).first.image.url(:medium)%>
+			<%= image_tag Phone.find(@listing.phone_id).image.url(:medium)%>
 		</div>
 		<h3><%= @listing.devicename %> | <%= @listing.devicecolor %> | <%= @listing.devicestorage %> | <%= @listing.devicecondition %></h3>
 		<p><%= @listing.description %>
