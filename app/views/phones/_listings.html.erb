@@ -9,16 +9,11 @@
 		<p><%= l.description %></p>
 	</div>
 	<div class="col-md-4">
-			<a href="../listings/<%=l.id%>" class="btn-sm red-color pull-right">$<%= l.askprice.to_i + 20 %></a>
+			<a href="../listings/<%=l.id%>" class="btn btn-sm red-color pull-right">$<%= l.askprice.to_i + 20 %></a>
 	</div>
 </div>
 <div class="row summary">
-	<div class="col-md-2 col-sm-4 col-xs-4 "><%= @phone.modelname %></div>
-	<div class="col-md-2 col-sm-4 col-xs-4 "><%= l.devicecolor %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.devicestorage %></div>
-	<div class="col-md-1 col-sm-4 col-xs-4 "><%= l.devicecondition %></div>
-	<div class="col-md-2 col-sm-4 col-xs-4 "><%= l.itemlocation %></div>
-	<div class="col-md-4 col-sm-4 col-xs-4 ">Accessories: <%= l.accessories %></div>
+	<div class="col-md-12 col-sm-12 col-xs-12 "><%= @phone.modelname %> | <%= l.devicecolor %> | <%= l.devicestorage %> | <%= l.devicecondition %> | <%= l.itemlocation %> | Accessories: <%= l.accessories %></div>
 </div>
 </div>
 <% end %>
