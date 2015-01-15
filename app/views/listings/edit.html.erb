@@ -66,11 +66,11 @@
 
 				</div>
 				
-						<h4>I accept all the terms and conditions and hereby when I click the Go button.</h4>
 						
 												<input type="text" name="foo" style="display: none;">
 												<hr class="gray">
-					<%= f.submit "Go", :disable_with => 'Going...', :class =>"btn btn-success redround offshadow" %>
+					<%= f.submit "Update", :disable_with => 'Update...', :class =>"btn btn-success offshadow" %>
+					<%= link_to "Cancel", :back, {:class=>"btn pomegranate-flat-button"} %>
 					<% end %>
 	
 				

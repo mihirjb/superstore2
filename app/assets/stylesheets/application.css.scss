@@ -1898,6 +1898,11 @@ form div.radgrp div.half-width
 @media (max-width: 1000px) {
 input[type="text"], input[type="email"]   { width: 60%;
 	margin: 0px auto;
+	div.btn-group
+	{
+		width:60%;
+		margin:0px 0px 15px;
+	}
 
  }
 
@@ -1969,5 +1974,10 @@ div.features
 	{
 		width:48%;
 		margin:1%;
+	}
+	div.btn-group
+	{
+		width:90%;
+		margin:0px 0px 15px;
 	}
 }
