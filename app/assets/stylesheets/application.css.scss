@@ -966,6 +966,11 @@ form textarea
 	width:40%;
 	padding:1.5em 1em;
 }
+
+div.comment-form textarea
+{
+	height:350px;
+}
 div.radgrp
 {
 	overflow:auto;
