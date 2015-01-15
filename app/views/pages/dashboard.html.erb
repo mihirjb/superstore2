@@ -41,7 +41,7 @@
 			</ul>
 		</div>
 		<div class="col-md-9 col-sm-9 col-xs-12 cushion">
-				<div class="table-responsive" id="listings">
+				<div id="listings">
 				<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your listings.</h3>
 				<hr class="gray">
 				<table class="table table-condensed">
@@ -90,7 +90,7 @@
 					</table>			
 			</div>
 			
-				<div class="table-responsive" id="activelistings">
+				<div id="activelistings">
 				<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname %></span>, here are all your  active listings.</h3>
 				<hr class="gray">
 				<table class="table table-condensed">
@@ -130,7 +130,7 @@
 
 
 
-					<div class="table-responsive" id="pendinglistings">
+					<div id="pendinglistings">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your  pending listings.</h3>
 					<hr class="gray">
 					<table class="table table-condensed">
@@ -172,7 +172,7 @@
 
 
 
-					<div class="table-responsive" id="soldlistings">
+					<div id="soldlistings">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your sold listings.</h3>
 					<hr class="gray">
 					<table class="table table-condensed">
@@ -214,7 +214,7 @@
 				
 				
 				
-					<div class="table-responsive" id="orders">
+					<div id="orders">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all your orders.</h3>
 					<hr class="gray">
 					<table class="table table-condensed">
@@ -258,7 +258,7 @@
 						</table>			
 				</div>		
 
-					<div class="table-responsive" id="soldorders">
+					<div id="soldorders">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all phones you sold.</h3>
 					<hr class="gray">
 					<table class="table table-condensed">
@@ -303,7 +303,7 @@
 						</table>			
 				</div>
 
-					<div class="table-responsive" id="boughtorders">
+					<div id="boughtorders">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  current_user.firstname  %></span>, here are all phones you bought.</h3>
 					<hr class="gray">
 					<table class="table table-condensed">
@@ -351,7 +351,7 @@
 				<% # Reviews  %>
 		
 		
-					<div class="table-responsive" id="sellerreview">
+					<div id="sellerreview">
 					<h3 class="listing-heading">Hey <span class="propernoun"><%=  @user.firstname  %></span>, here is all the feedback you got.
 						<span class="pull-right">
 						<span class="upvote"><%= Vote.where('voteable_id =? AND vote =?', @profile.id, true).count %></span> <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -378,7 +378,7 @@
 				</div>
 
 
-				<div class="table-responsive" id="buyerreview">
+				<div id="buyerreview">
 				  	<h2>Here are all the reviews you wrote</h2>
 					<ul class="list">
 						<% @orders.each do |o| %>
