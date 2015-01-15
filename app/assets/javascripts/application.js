@@ -590,7 +590,7 @@ required: true,
 
 	            "comment[commentbody]": {
 	                required: "Please write something first. Empty comments not allowed",
-					rangelength: "Description should be between 6 and 140",
+					rangelength: "Description should be between 1 and 600",
 					
 	
 	            },
