@@ -4,7 +4,7 @@
 	<div class="container softshadow">
 		<div class="info-bar">
 			<h1 class="listing-heading pull-left"><%=image_tag @profile.avatar.url(:mini), :class => "img-circle owner-image" %> Welcome, <%=@user.firstname %>!</h1>
-					<div class="useful-links pull-right cushion"> <%= link_to "Sell", root_url, :class =>"btn btn-sm black-flat-btn " %> 
+					<div class="useful-links pull-right cushion"> <%= link_to "+ List your phone", root_url, :class =>"btn btn-sm black-flat-btn " %> 
 					
 
 					<% if  @profile %>
