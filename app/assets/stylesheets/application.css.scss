@@ -1901,16 +1901,19 @@ form .btn
 /*********Media Queries**************/
 
 @media (max-width: 1000px) {
-input[type="text"], input[type="email"]   { width: 60%;
+input[type="text"], input[type="email"]   
+{ width: 60%;
 	margin: 0px auto;
-	div.btn-group
-	{
-		width:60%;
-		margin:0px 0px 15px;
-	}
-
- }
-
+}
+div.btn-group
+{
+	width:60%;
+	margin:0px 0px 15px;
+}
+.input-btn
+{
+	width: 40%;
+}
 
 div.pane
 {
@@ -1941,10 +1944,15 @@ div.features
 }
 }
 @media (max-width: 500px) {
-	input[type="text"], input[type="email"]   { width: 80%;
+	input[type="text"], input[type="email"]  
+	 { width: 80%;
 		margin: 0px auto;
-
 	 }
+	.input-btn
+	{
+		width: 60%;
+	}
+	
 	form
 	{
 		width:100%;
