@@ -21,7 +21,7 @@ class Comment < ActiveRecord::Base
   belongs_to :listing, touch: true
   
   validates :commentbody, :presence => {:message => 'Heading cannot be blank, Listing not saved'}
-  validates :commentbody, :length => {:maximum => 140}
+  validates :commentbody, :length => {:maximum => 600}
   has_attached_file :picture, styles: {
       mini: '50x50>',
      thumb: '100x100>',
