@@ -3,17 +3,16 @@
 <section class="white-color">
 	<div class="container softshadow">
 		<div class="info-bar">
-			<h1 class="listing-heading"><%=image_tag @profile.avatar.url(:mini), :class => "img-circle owner-image" %> Welcome, <%=@user.firstname %>!
-					<div class="useful-links pull-right"> <%= link_to "Sell", root_url %> 
+			<h1 class="listing-heading pull-left"><%=image_tag @profile.avatar.url(:mini), :class => "img-circle owner-image" %> Welcome, <%=@user.firstname %>!</h1>
+					<div class="useful-links pull-right"> <%= link_to "Sell", root_url, :class =>"btn btn-sm black-flat-btn " %> 
 					
 
 					<% if  @profile %>
-					<span class="glyphicon glyphicon-asterisk"></span><%= link_to "Edit Profile", "/profiles/#{@profile.id}/edit" %>
+					<span class="glyphicon glyphicon-asterisk"></span><%= link_to "Edit Profile", "/profiles/#{@profile.id}/edit", :class =>"btn btn-sm black-flat-btn " %>
 					<% else %>
-					<span class="glyphicon glyphicon-asterisk"></span><%= link_to "Complete your Profile", new_profile_path %>
+					<span class="glyphicon glyphicon-asterisk"></span><%= link_to "Complete your Profile", new_profile_path, :class =>"btn btn-sm black-flat-btn " %>
 					<%end %>
 					</div>
-			</h1>
 		</div>
 	</div>
 <div class="container silver-color softshadow">									
