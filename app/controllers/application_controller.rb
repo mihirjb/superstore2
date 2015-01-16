@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_return_path 
   
   
+  
   def store_location
      # store last url - this is needed for post-login redirect to whatever the user last visited.
      if (request.fullpath != "/users/sign_in" &&

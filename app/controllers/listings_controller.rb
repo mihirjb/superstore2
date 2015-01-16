@@ -16,10 +16,14 @@ class ListingsController < ApplicationController
   end
 
   def new
-    if !params[:foo]
+    if current_user.credits > 10
+    if !params[:foo] 
     @listing = current_user.listings.new
     5.times { @listing.assets.build }
   end
+  else
+     redirect_to "/pages/dashboard", :notice => "You dont have sufficient credits please recharge your account"
+   end
   end
 
   def create
@@ -27,6 +31,8 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.create(listing_params())
     if @listing.save
       Listing.get_paypal_status(@listing.paypalemail,@listing.paypalfname,@listing.paypallname,@listing.id)
+      @credits = current_user.credits - 1
+      current_user.update_columns(:credits => @credits)
       redirect_to "/pages/thanksandshare?lid=#{@listing.id}", :notice => "Congratulations, Listing created Successfully."
     else
      redirect_to :back, :notice => "Alas your listing could not be saved as there were errors."
